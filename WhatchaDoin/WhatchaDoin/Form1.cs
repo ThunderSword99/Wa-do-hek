@@ -60,7 +60,7 @@ namespace WhatchaDoin
                     checkedListBox1.Items.Add(s.Substring(0, s.Length - 1), false);
                 }
             }
-
+            //Thay đổi thời gian bắt đầu
             string TBF = @"C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\TimeBeginning.txt";// Đường dẫn đến TodayData  
             string[] TimeBeginning = File.ReadAllLines(TBF);// Lưu từng dòng trong txt
             string DAT = DateTime.Now.ToString("dd/MM/yyyy");

@@ -46,6 +46,25 @@ namespace WhatchaDoin
         //Tải dữ liệu ngày hôm nay lưu
         private void LoadingTodayData() 
         {
+            //Cập nhật thời gian bắt đầu
+            string TBF = @"C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\TimeBeginning.txt";// Đường dẫn đến TodayData  
+            string[] TimeBeginning = File.ReadAllLines(TBF);// Lưu từng dòng trong txt
+            string DAT = DateTime.Now.ToString("dd/MM/yyyy");
+            if (DAT != TimeBeginning[0])// Kiểm tra xem thời gian bắt đầu là của hôm qua hay hôm nay
+            {
+                string path = @"C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\TodayTargets.txt";
+                File.WriteAllText(path, String.Empty);
+                timeBeginning = DateTime.Now.ToString("h:mm tt");
+                FileStream fs = new FileStream("C:\\Users\\ADMIN\\source\\repos\\WhatchaDoin\\WhatchaDoin\\TimeBeginning.txt", FileMode.Open);
+                StreamWriter wt = new StreamWriter(fs, Encoding.UTF8);
+                wt.WriteLine(DAT);
+                wt.WriteLine(timeBeginning);
+                wt.Close();
+            }
+            else
+            {
+                timeBeginning = TimeBeginning[1];
+            }
             //Tải nội dung các chỉ tiêu
             string[] lines = File.ReadAllLines(@"C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\TodayTargets.txt");
             foreach (string s in lines)
@@ -59,23 +78,7 @@ namespace WhatchaDoin
                     checkedListBox1.Items.Add(s.Substring(0, s.Length - 1), false);
                 }
             }
-            //Cập nhật thời gian bắt đầu
-            string TBF = @"C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\TimeBeginning.txt";// Đường dẫn đến TodayData  
-            string[] TimeBeginning = File.ReadAllLines(TBF);// Lưu từng dòng trong txt
-            string DAT = DateTime.Now.ToString("dd/MM/yyyy");
-            if (DAT != TimeBeginning[0])// Kiểm tra xem thời gian bắt đầu là của hôm qua hay hôm nay
-            {
-                timeBeginning = DateTime.Now.ToString("h:mm tt");
-                FileStream fs = new FileStream("C:\\Users\\ADMIN\\source\\repos\\WhatchaDoin\\WhatchaDoin\\TimeBeginning.txt", FileMode.Open);
-                StreamWriter wt = new StreamWriter(fs, Encoding.UTF8);
-                wt.WriteLine(DAT);
-                wt.WriteLine(timeBeginning);
-                wt.Close();
-            }
-            else
-            {
-                timeBeginning = TimeBeginning[1];
-            }
+            
             // Load các thông số tổng
             string DF = @"C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\Data.txt";// Đường dẫn đến Data  
             string[] Statistic = File.ReadAllLines(DF);// Lưu từng dòng trong txt
@@ -230,6 +233,8 @@ namespace WhatchaDoin
         //Lưu giữ liệu khi đóng form
         private void SaveTodayData()
         {
+            string path = @"C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\TodayTargets.txt";
+            File.WriteAllText(path, String.Empty);
             FileStream fs = new FileStream("C:\\Users\\ADMIN\\source\\repos\\WhatchaDoin\\WhatchaDoin\\TodayTargets.txt", FileMode.Open);
             StreamWriter wt = new StreamWriter(fs, Encoding.UTF8);
             for (int i = 0; i < checkedListBox1.Items.Count; i++)
@@ -295,7 +300,6 @@ namespace WhatchaDoin
             }
             if (DAT != Statistic[0]) //Khác ngày
             {
-                checkedListBox1.Items.Clear();
                 totalUncompleteTargets += cnt2; // Cập nhật số chỉ tiêu không hoàn thành
                 totalScore += cnt1; // Cập nhật tổng điểm
                 wt.WriteLine(DateTime.Now.ToString("dd/MM/yyyy"));
@@ -322,17 +326,13 @@ namespace WhatchaDoin
                 wt.WriteLine(totalScore);
                 wt.Close();
             }
-            else
-            {
-
-            }
 
         }
         //Sự kiện đóng form
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             SaveTodayData();
-            SaveStatistic();
+            SaveStatistic();   
         }
         //Nhấn Enter trong textbox1 sẽ gửi lên checklistbox
         private void TextBox1_KeyDown(object sender, KeyEventArgs e)

@@ -1,0 +1,1 @@
+xcopy /s /i "C:\Users\ADMIN\source\repos\WhatchaDoin" "C:\Users\ADMIN\Desktop\Wa-do-hek\WhatchaDoin"

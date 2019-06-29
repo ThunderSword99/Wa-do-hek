@@ -1,7 +1,6 @@
 C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\bin\Debug\WhatchaDoin.exe.config
 C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\bin\Debug\WhatchaDoin.exe
 C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\bin\Debug\WhatchaDoin.pdb
-C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\obj\Debug\WhatchaDoin.csprojAssemblyReference.cache
 C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\obj\Debug\WhatchaDoin.Form1.resources
 C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\obj\Debug\WhatchaDoin.Properties.Resources.resources
 C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\obj\Debug\WhatchaDoin.csproj.GenerateResource.cache

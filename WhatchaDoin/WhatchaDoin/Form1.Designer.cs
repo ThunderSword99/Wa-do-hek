@@ -66,6 +66,7 @@
             this.label1.Size = new System.Drawing.Size(414, 73);
             this.label1.TabIndex = 0;
             this.label1.Text = "Whatcha Doin";
+            this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // pictureBox1
             // 

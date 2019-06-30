@@ -10,3 +10,4 @@ C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\obj\Debug\WhatchaDoin.pdb
 C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\bin\Debug\CircularProgressBar.dll
 C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\bin\Debug\WinFormAnimation.dll
 C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\obj\Debug\WhatchaDoin.csproj.CopyComplete
+C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\obj\Debug\WhatchaDoin.csprojAssemblyReference.cache

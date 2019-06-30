@@ -71,11 +71,11 @@ namespace WhatchaDoin
             label8.Text = text8 + todayScore.ToString();
             //Đặt mặc định thông số tổng
             string DF = @"C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\TotalData.txt";// Đường dẫn đến Data  
-            string[] Statistic = File.ReadAllLines(DF);// Lưu từng dòng trong txt
-            totalUncompleteTargets = Statistic[0][0] - '0';
-            relaxingDay = Statistic[1][0] - '0';
-            perfectScoreInARow = Statistic[2][0] - '0';
-            totalScore = Statistic[3][0] - '0';
+            string[] TotalData = File.ReadAllLines(DF);// Lưu từng dòng trong txt
+            totalUncompleteTargets = Int32.Parse(TotalData[0].ToString());
+            relaxingDay = Int32.Parse(TotalData[1].ToString());
+            perfectScoreInARow = Int32.Parse(TotalData[2].ToString());
+            totalScore = Int32.Parse(TotalData[3].ToString());
             label9.Text = text9 + totalUncompleteTargets.ToString();
             label10.Text = text10 + relaxingDay.ToString();
             label11.Text = text11 + perfectScoreInARow.ToString();
@@ -345,6 +345,11 @@ namespace WhatchaDoin
             {
                 Button1_Click(this, new EventArgs());
             }
+        }
+
+        private void Label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

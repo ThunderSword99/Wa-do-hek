@@ -11,3 +11,4 @@ C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\bin\Debug\CircularProgressBa
 C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\bin\Debug\WinFormAnimation.dll
 C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\obj\Debug\WhatchaDoin.csproj.CopyComplete
 C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\obj\Debug\WhatchaDoin.csprojAssemblyReference.cache
+C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\obj\Debug\WhatchaDoin.Form2.resources

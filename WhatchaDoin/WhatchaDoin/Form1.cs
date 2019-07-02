@@ -104,15 +104,15 @@ namespace WhatchaDoin
             string TotalDF = @"C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\TotalData.txt";// Đường dẫn đến TodayData
             string[] TotalData = File.ReadAllLines(TotalDF);// Lưu từng dòng trong txt
             //lấy dữ liệu tổng
-            totalUncompleteTargets = TotalData[0][0] - '0'; 
-            relaxingDay = TotalData[1][0] - '0';
-            perfectScoreInARow = TotalData[2][0] -'0';
-            totalScore = TotalData[3][0] - '0';
+            totalUncompleteTargets = Int32.Parse(TotalData[0].ToString()); 
+            relaxingDay = Int32.Parse(TotalData[1].ToString());
+            perfectScoreInARow = Int32.Parse(TotalData[2].ToString());
+            totalScore = Int32.Parse(TotalData[3].ToString());
             //Lấy giữ liệu từ TodayData.txt lên Codesouces
             string TodayDF = @"C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\TodayData.txt";// Đường dẫn đến TodayData
             string[] TodayData = File.ReadAllLines(TodayDF);// Lưu từng dòng trong txt
             //Cập nhật dữ liệu tổng
-            totalUncompleteTargets += TodayData[3][0] - '0';
+            totalUncompleteTargets += Int32.Parse(TodayData[3].ToString());
             if (TodayData[2][0] == '0')
             {
                 relaxingDay += 1;
@@ -129,7 +129,7 @@ namespace WhatchaDoin
             {
                 perfectScoreInARow = 0;
             }
-            totalScore += TodayData[2][0] - '0';
+            totalScore += Int32.Parse(TodayData[2].ToString());
             //Ghi lại giữ liệu tổng vào TotalData.txt
             FileStream fs = new FileStream("C:\\Users\\ADMIN\\source\\repos\\WhatchaDoin\\WhatchaDoin\\TotalData.txt", FileMode.Open);
             StreamWriter wt = new StreamWriter(fs, Encoding.UTF8);
@@ -178,6 +178,7 @@ namespace WhatchaDoin
             InitializeComponent();
             LoadingTodayData();
             SettingFormDefault();
+           
         }
 
         //Button submit
@@ -195,10 +196,11 @@ namespace WhatchaDoin
         //Đếm thời gian còn lại
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            if (timeRemaining.TotalSeconds <= 0)
+            if (timeRemaining.TotalSeconds <= 10)
             {
                 timer1.Stop();
                 timer2.Stop();
+                this.Close();
             }
             else
             {
@@ -244,7 +246,6 @@ namespace WhatchaDoin
                 {
                     checkedListBox1.SelectedIndex = selectItem;
                     contextMenuStrip1.Show(checkedListBox1, e.Location);
-
                 }
             }
         }
@@ -350,6 +351,12 @@ namespace WhatchaDoin
         private void Label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void AddCommentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 a = new Form2();
+            a.Show();
         }
     }
 }

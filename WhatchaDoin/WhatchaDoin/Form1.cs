@@ -87,13 +87,20 @@ namespace WhatchaDoin
             string[] lines = File.ReadAllLines(@"C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\TodayTargets.txt");
             foreach (string s in lines)
             {
-                if (s[s.Length - 1] == '1')
+                try
                 {
-                    checkedListBox1.Items.Add(s.Substring(0, s.Length - 1), true);
+                    if (s[s.Length - 1] == '1')
+                    {
+                        checkedListBox1.Items.Add(s.Substring(0, s.Length - 1), true);
+                    }
+                    else
+                    {
+                        checkedListBox1.Items.Add(s.Substring(0, s.Length - 1), false);
+                    }
                 }
-                else
+                catch
                 {
-                    checkedListBox1.Items.Add(s.Substring(0, s.Length - 1), false);
+
                 }
             }
         }
@@ -285,6 +292,8 @@ namespace WhatchaDoin
             }
             else
             {
+                string path = @"C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\TodayTargets.txt";
+                File.WriteAllText(path, String.Empty);
                 FileStream fs = new FileStream("C:\\Users\\ADMIN\\source\\repos\\WhatchaDoin\\WhatchaDoin\\TodayTargets.txt", FileMode.Open);
                 StreamWriter wt = new StreamWriter(fs, Encoding.UTF8);
                 for (int i = 0; i < checkedListBox1.Items.Count; i++)

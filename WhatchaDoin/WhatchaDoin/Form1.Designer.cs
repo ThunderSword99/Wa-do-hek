@@ -49,10 +49,10 @@
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addCommentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.addCommentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -86,6 +86,7 @@
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(476, 334);
             this.checkedListBox1.TabIndex = 2;
+            this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.CheckedListBox1_SelectedIndexChanged);
             this.checkedListBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.CheckedListBox1_MouseDown);
             // 
             // circularProgressBar1
@@ -233,7 +234,7 @@
             this.removeToolStripMenuItem,
             this.addCommentToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(152, 48);
             // 
             // removeToolStripMenuItem
             // 
@@ -241,6 +242,13 @@
             this.removeToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.removeToolStripMenuItem.Text = "Remove";
             this.removeToolStripMenuItem.Click += new System.EventHandler(this.RemoveToolStripMenuItem_Click);
+            // 
+            // addCommentToolStripMenuItem
+            // 
+            this.addCommentToolStripMenuItem.Name = "addCommentToolStripMenuItem";
+            this.addCommentToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.addCommentToolStripMenuItem.Text = "Add comment";
+            this.addCommentToolStripMenuItem.Click += new System.EventHandler(this.AddCommentToolStripMenuItem_Click);
             // 
             // notifyIcon1
             // 
@@ -268,13 +276,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
-            // addCommentToolStripMenuItem
-            // 
-            this.addCommentToolStripMenuItem.Name = "addCommentToolStripMenuItem";
-            this.addCommentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.addCommentToolStripMenuItem.Text = "Add comment";
-            this.addCommentToolStripMenuItem.Click += new System.EventHandler(this.AddCommentToolStripMenuItem_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -300,9 +301,10 @@
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Whatcha doin";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.SizeChanged += new System.EventHandler(this.Form1_SizeChanged);
+            this.Click += new System.EventHandler(this.Form1_Click);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);

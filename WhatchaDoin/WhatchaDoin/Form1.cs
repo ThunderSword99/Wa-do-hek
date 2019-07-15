@@ -38,6 +38,7 @@ namespace WhatchaDoin
         private int totalScore = 0;// Tổng điểm đã làm được
         // Tự thêm
         private Label label3;
+        Form2 CommentForm;
         public class CustomCheckedListBox : CheckedListBox
         {
 
@@ -123,12 +124,13 @@ namespace WhatchaDoin
             if (TodayData[2][0] == '0')
             {
                 relaxingDay += 1;
+                perfectScoreInARow = 0;
             }
             else
             {
                 relaxingDay = 0;
             }
-            if (TodayData[2][0] == TodayData[1][0])
+            if (TodayData[2][0] == TodayData[1][0] && TodayData[2][0]!='0')
             {
                 perfectScoreInARow += 1;
             }
@@ -172,6 +174,20 @@ namespace WhatchaDoin
                 ChangeTodayDataTxt();
                 LoadingTotalData();
                 checkedListBox1.Items.Clear();
+                //Xóa hết comment items
+                try
+                {
+                    for (int i=0;i<=100;i++)
+                    {
+                        string dirName = "C:\\Users\\ADMIN\\source\\repos\\WhatchaDoin\\WhatchaDoin\\Comment" + i + ".txt";
+                        File.Delete(dirName);
+                    }
+                }
+                catch
+                {
+
+                }
+               
             }
             else
             {
@@ -185,7 +201,8 @@ namespace WhatchaDoin
             InitializeComponent();
             LoadingTodayData();
             SettingFormDefault();
-           
+            CommentForm = new Form2();
+            
         }
 
         //Button submit
@@ -236,16 +253,21 @@ namespace WhatchaDoin
                 circularProgressBar1.Value = 0;
                 circularProgressBar1.Text = "0%";
             }
-
-
+            if (selectItem == -1)
+            {
+                CommentForm.Hide();
+            }
         }
 
         //Click chuột phải để remove chỉ tiêu
-        private int selectItem;// Item trong check list box được chọn
+        public static int selectItem;// Item trong check list box được chọn
         private void CheckedListBox1_MouseDown(object sender, MouseEventArgs e)
         {
             selectItem = checkedListBox1.IndexFromPoint(e.X, e.Y);
             checkedListBox1.SelectedIndex = selectItem;
+
+          
+
             if (e.Button == MouseButtons.Right)
             {
                 selectItem = checkedListBox1.IndexFromPoint(e.Location);
@@ -256,9 +278,22 @@ namespace WhatchaDoin
                 }
             }
         }
+
+        
+
         private void RemoveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             checkedListBox1.Items.RemoveAt(selectItem);
+            try
+            {
+                string dirName = "C:\\Users\\ADMIN\\source\\repos\\WhatchaDoin\\WhatchaDoin\\Comment" + selectItem + ".txt";
+                File.Delete(dirName);
+            }
+            catch
+            {
+
+            }
+            CommentForm.Hide();
         }
         //Ẩn ứng dụng dưới dạng notify và không chiểm quyền alt + tab
         private void Form1_SizeChanged(object sender, EventArgs e)
@@ -269,6 +304,7 @@ namespace WhatchaDoin
             {
                 notifyIcon1.Visible = true;
                 this.Hide();
+                CommentForm.Hide();
             }
 
         }
@@ -318,7 +354,7 @@ namespace WhatchaDoin
             string TodayDF = @"C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\TodayData.txt";// Đường dẫn đến TodayData
             string[] TodayData = File.ReadAllLines(TodayDF);// Lưu từng dòng trong txt
             timeBeginning = TodayData[4];
-            //Lưu thông số
+            // Lưu thông số
             FileStream fs = new FileStream("C:\\Users\\ADMIN\\source\\repos\\WhatchaDoin\\WhatchaDoin\\TodayData.txt", FileMode.Open);
             StreamWriter wt = new StreamWriter(fs, Encoding.UTF8);
             wt.WriteLine(DateTime.Now.ToString("dd/MM/yyyy"));
@@ -343,6 +379,11 @@ namespace WhatchaDoin
             wt.Close();
         }
 
+        private void SaveNoteForm2()
+        {
+
+        }
+
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             SaveTodayTargets();
@@ -364,8 +405,53 @@ namespace WhatchaDoin
 
         private void AddCommentToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form2 a = new Form2();
-            a.Show();
+            checkedListBox1.SelectedIndex = selectItem;
+            String fileDir = @"C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\Comment" + Form1.selectItem.ToString() + ".txt";
+            try
+            {
+                if (File.Exists(fileDir))
+                {
+
+                }
+                else
+                {
+                    File.Create(fileDir);
+                    CommentForm.Form2_Load(this, null);
+                    CommentForm.Show();
+                    this.Select();
+                }
+            }
+            catch (Exception Ex)
+            {
+                Console.WriteLine(Ex.ToString());
+            }
+        }
+
+        private void Form1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CheckedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String fileDir = @"C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\Comment" + Form1.selectItem.ToString() + ".txt";
+            try
+            {
+                if (File.Exists(fileDir))
+                {
+                    CommentForm.Form2_Load(this,null); // lỗi
+                    CommentForm.Show();
+                    this.Select();
+                }
+                else
+                {
+                    CommentForm.Hide();
+                }
+            }
+            catch (Exception Ex)
+            {
+                Console.WriteLine(Ex.ToString());
+            }
         }
     }
 }

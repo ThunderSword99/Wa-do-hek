@@ -68,6 +68,7 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Whatcha Doin";
             this.label1.Click += new System.EventHandler(this.Label1_Click);
+            this.label1.DoubleClick += new System.EventHandler(this.Label1_DoubleClick);
             // 
             // pictureBox1
             // 

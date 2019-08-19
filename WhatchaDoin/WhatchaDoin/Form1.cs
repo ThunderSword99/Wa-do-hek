@@ -400,7 +400,7 @@ namespace WhatchaDoin
 
         private void Label1_Click(object sender, EventArgs e)
         {
-
+           
         }
 
         private void AddCommentToolStripMenuItem_Click(object sender, EventArgs e)
@@ -452,6 +452,11 @@ namespace WhatchaDoin
             {
                 Console.WriteLine(Ex.ToString());
             }
+        }
+
+        private void Label1_DoubleClick(object sender, EventArgs e)
+        {
+            
         }
     }
 }

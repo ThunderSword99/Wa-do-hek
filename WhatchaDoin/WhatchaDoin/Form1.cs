@@ -166,7 +166,7 @@ namespace WhatchaDoin
         private void LoadingTodayData()
         {
             string TodayDF = @"C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\TodayData.txt";// Đường dẫn đến TodayData
-            string[] TodayData = File.ReadAllLines(TodayDF);// Lưu từng dòng trong txt
+            string[] TodayData = File.ReadAllLines("TodayData.txt");// Lưu từng dòng trong txt
             string TodayDAT = DateTime.Now.ToString("dd/MM/yyyy");
             if (TodayDAT != TodayData[0])// Kiểm tra xem thời gian bắt đầu là của hôm qua hay hôm nay
             {
@@ -214,6 +214,10 @@ namespace WhatchaDoin
                 textBox1.Text = textBox1.Text.Substring(0, 1).ToString().ToUpper() + textBox1.Text.Substring(1).ToString();
                 checkedListBox1.Items.Add(textBox1.Text);
                 textBox1.Text = null;
+
+                string path = "C:\\Users\\ADMIN\\source\\repos\\WhatchaDoin\\WhatchaDoin\\History.txt";
+                File.AppendAllText(path,"*Adding new target" + Environment.NewLine);
+                File.Create("Hello.txt");
             }
 
         }
@@ -288,6 +292,12 @@ namespace WhatchaDoin
             {
                 string dirName = "C:\\Users\\ADMIN\\source\\repos\\WhatchaDoin\\WhatchaDoin\\Comment" + selectItem + ".txt";
                 File.Delete(dirName);
+
+                FileStream fs = new FileStream("C:\\Users\\ADMIN\\source\\repos\\WhatchaDoin\\WhatchaDoin\\History.txt", FileMode.Open);
+                StreamWriter wt = new StreamWriter(fs, Encoding.UTF8);
+                wt.WriteLine("*Removing a target");
+                wt.Flush();
+                wt.Close();
             }
             catch
             {
@@ -418,7 +428,6 @@ namespace WhatchaDoin
                     File.Create(fileDir);
                     CommentForm.Form2_Load(this, null);
                     CommentForm.Show();
-                    this.Select();
                 }
             }
             catch (Exception Ex)
@@ -439,7 +448,8 @@ namespace WhatchaDoin
             {
                 if (File.Exists(fileDir))
                 {
-                    CommentForm.Form2_Load(this,null); // lỗi
+                    CommentForm = new Form2();
+                    CommentForm.Form2_Load(this,null);
                     CommentForm.Show();
                     this.Select();
                 }
@@ -457,6 +467,17 @@ namespace WhatchaDoin
         private void Label1_DoubleClick(object sender, EventArgs e)
         {
             
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HistoryForm HF = new HistoryForm();
+            HF.Show();
         }
     }
 }

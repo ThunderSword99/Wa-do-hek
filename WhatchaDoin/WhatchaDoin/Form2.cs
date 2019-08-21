@@ -23,7 +23,6 @@ namespace WhatchaDoin
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.TopMost = true;
             textNote = textBox1.Text;
-        
         }
         //Lưu comment items
         private void SaveNote()

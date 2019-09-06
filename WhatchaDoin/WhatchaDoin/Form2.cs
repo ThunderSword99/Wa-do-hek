@@ -30,7 +30,7 @@ namespace WhatchaDoin
             //Kiểm tra xem nó có đang chọn items không
             if (Form1.selectItem != -1)
             {
-                string dirName = "C:\\Users\\ADMIN\\source\\repos\\WhatchaDoin\\WhatchaDoin\\Comment" + Form1.selectItem + ".txt";
+                string dirName = "Comment" + Form1.selectItem + ".txt";
                 //Kiểm tra text có khác rỗng
                 if (textBox1.Text == "")
                 {
@@ -50,7 +50,7 @@ namespace WhatchaDoin
         public void Form2_Load(object sender, EventArgs e)
         {
             textBox1.Text = null;
-            String fileDir = @"C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\Comment" + Form1.selectItem.ToString() + ".txt";
+            String fileDir = "Comment" + Form1.selectItem.ToString() + ".txt";
             try
             {   
                 if (File.Exists(fileDir))

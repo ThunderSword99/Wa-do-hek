@@ -46,7 +46,7 @@ namespace WhatchaDoin
 
         private void LoadingTotalData()
         {
-            string TotalDF = @"C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\TodayData.txt";// Đường dẫn đến TodayData
+            string TotalDF = "TodayData.txt";// Đường dẫn đến TodayData
             string[] TotalData = File.ReadAllLines(TotalDF);// Lưu từng dòng trong txt
             totalUncompleteTargets = (int)TotalData[0][0];
             relaxingDay = (int)TotalData[1][0];
@@ -55,7 +55,7 @@ namespace WhatchaDoin
         }
         private void SettingFormDefault()
         {
-            string TodayDF = @"C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\TodayData.txt";// Đường dẫn đến TodayData
+            string TodayDF = "TodayData.txt";// Đường dẫn đến TodayData
             string[] TodayData = File.ReadAllLines(TodayDF);// Lưu từng dòng trong txt
             timeBeginning = TodayData[4];
             //Đặt mặc định
@@ -71,7 +71,7 @@ namespace WhatchaDoin
             timer1.Start();//Update label 7
             label8.Text = text8 + todayScore.ToString();
             //Đặt mặc định thông số tổng
-            string DF = @"C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\TotalData.txt";// Đường dẫn đến Data  
+            string DF = "TotalData.txt";// Đường dẫn đến Data  
             string[] TotalData = File.ReadAllLines(DF);// Lưu từng dòng trong txt
             totalUncompleteTargets = Int32.Parse(TotalData[0].ToString());
             relaxingDay = Int32.Parse(TotalData[1].ToString());
@@ -85,7 +85,7 @@ namespace WhatchaDoin
 
         private void LoadingTodayTargets()
         {
-            string[] lines = File.ReadAllLines(@"C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\TodayTargets.txt");
+            string[] lines = File.ReadAllLines("TodayTargets.txt");
             foreach (string s in lines)
             {
                 try
@@ -109,7 +109,7 @@ namespace WhatchaDoin
         private void UpdateTotalData()
         {         
             //Lấy giữ liệu tổng từ TodayData.txt lên Codesources
-            string TotalDF = @"C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\TotalData.txt";// Đường dẫn đến TodayData
+            string TotalDF = "TotalData.txt";// Đường dẫn đến TodayData
             string[] TotalData = File.ReadAllLines(TotalDF);// Lưu từng dòng trong txt
             //lấy dữ liệu tổng
             totalUncompleteTargets = Int32.Parse(TotalData[0].ToString()); 
@@ -117,7 +117,7 @@ namespace WhatchaDoin
             perfectScoreInARow = Int32.Parse(TotalData[2].ToString());
             totalScore = Int32.Parse(TotalData[3].ToString());
             //Lấy giữ liệu từ TodayData.txt lên Codesouces
-            string TodayDF = @"C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\TodayData.txt";// Đường dẫn đến TodayData
+            string TodayDF = "TodayData.txt";// Đường dẫn đến TodayData
             string[] TodayData = File.ReadAllLines(TodayDF);// Lưu từng dòng trong txt
             //Cập nhật dữ liệu tổng
             totalUncompleteTargets += Int32.Parse(TodayData[3].ToString());
@@ -140,7 +140,7 @@ namespace WhatchaDoin
             }
             totalScore += Int32.Parse(TodayData[2].ToString());
             //Ghi lại giữ liệu tổng vào TotalData.txt
-            FileStream fs = new FileStream("C:\\Users\\ADMIN\\source\\repos\\WhatchaDoin\\WhatchaDoin\\TotalData.txt", FileMode.Open);
+            FileStream fs = new FileStream("TotalData.txt", FileMode.Open);
             StreamWriter wt = new StreamWriter(fs, Encoding.UTF8);
             wt.WriteLine(totalUncompleteTargets);
             wt.WriteLine(relaxingDay);
@@ -152,7 +152,7 @@ namespace WhatchaDoin
         
         private void ChangeTodayDataTxt()
         {
-            FileStream fs = new FileStream("C:\\Users\\ADMIN\\source\\repos\\WhatchaDoin\\WhatchaDoin\\TodayData.txt", FileMode.Open);
+            FileStream fs = new FileStream("TodayData.txt", FileMode.Open);
             StreamWriter wt = new StreamWriter(fs, Encoding.UTF8);
             wt.WriteLine(DateTime.Now.ToString("dd/MM/yyyy"));
             wt.WriteLine(0);
@@ -165,7 +165,6 @@ namespace WhatchaDoin
 
         private void LoadingTodayData()
         {
-            string TodayDF = @"C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\TodayData.txt";// Đường dẫn đến TodayData
             string[] TodayData = File.ReadAllLines("TodayData.txt");// Lưu từng dòng trong txt
             string TodayDAT = DateTime.Now.ToString("dd/MM/yyyy");
             if (TodayDAT != TodayData[0])// Kiểm tra xem thời gian bắt đầu là của hôm qua hay hôm nay
@@ -179,7 +178,7 @@ namespace WhatchaDoin
                 {
                     for (int i=0;i<=100;i++)
                     {
-                        string dirName = "C:\\Users\\ADMIN\\source\\repos\\WhatchaDoin\\WhatchaDoin\\Comment" + i + ".txt";
+                        string dirName = "Comment" + i + ".txt";
                         File.Delete(dirName);
                     }
                 }
@@ -215,9 +214,8 @@ namespace WhatchaDoin
                 checkedListBox1.Items.Add(textBox1.Text);
                 textBox1.Text = null;
 
-                string path = "C:\\Users\\ADMIN\\source\\repos\\WhatchaDoin\\WhatchaDoin\\History.txt";
+                string path = "History.txt";
                 File.AppendAllText(path,"*Adding new target" + Environment.NewLine);
-                File.Create("Hello.txt");
             }
 
         }
@@ -290,14 +288,11 @@ namespace WhatchaDoin
             checkedListBox1.Items.RemoveAt(selectItem);
             try
             {
-                string dirName = "C:\\Users\\ADMIN\\source\\repos\\WhatchaDoin\\WhatchaDoin\\Comment" + selectItem + ".txt";
+                string dirName = "Comment" + selectItem + ".txt";
                 File.Delete(dirName);
 
-                FileStream fs = new FileStream("C:\\Users\\ADMIN\\source\\repos\\WhatchaDoin\\WhatchaDoin\\History.txt", FileMode.Open);
-                StreamWriter wt = new StreamWriter(fs, Encoding.UTF8);
-                wt.WriteLine("*Removing a target");
-                wt.Flush();
-                wt.Close();
+                string path = "History.txt";
+                File.AppendAllText(path, "*Adding new target" + Environment.NewLine);
             }
             catch
             {
@@ -333,14 +328,14 @@ namespace WhatchaDoin
         {
             if (checkedListBox1.Items.Count == 0)
             {
-                string path = @"C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\TodayTargets.txt";
+                string path = "TodayTargets.txt";
                 File.WriteAllText(path, String.Empty);
             }
             else
             {
-                string path = @"C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\TodayTargets.txt";
+                string path = "TodayTargets.txt";
                 File.WriteAllText(path, String.Empty);
-                FileStream fs = new FileStream("C:\\Users\\ADMIN\\source\\repos\\WhatchaDoin\\WhatchaDoin\\TodayTargets.txt", FileMode.Open);
+                FileStream fs = new FileStream("TodayTargets.txt", FileMode.Open);
                 StreamWriter wt = new StreamWriter(fs, Encoding.UTF8);
                 for (int i = 0; i < checkedListBox1.Items.Count; i++)
                 {
@@ -361,11 +356,11 @@ namespace WhatchaDoin
         private void SaveTodayData()
         {
             //Lưu thời gian bắt đầu
-            string TodayDF = @"C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\TodayData.txt";// Đường dẫn đến TodayData
+            string TodayDF = "TodayData.txt";// Đường dẫn đến TodayData
             string[] TodayData = File.ReadAllLines(TodayDF);// Lưu từng dòng trong txt
             timeBeginning = TodayData[4];
             // Lưu thông số
-            FileStream fs = new FileStream("C:\\Users\\ADMIN\\source\\repos\\WhatchaDoin\\WhatchaDoin\\TodayData.txt", FileMode.Open);
+            FileStream fs = new FileStream("TodayData.txt", FileMode.Open);
             StreamWriter wt = new StreamWriter(fs, Encoding.UTF8);
             wt.WriteLine(DateTime.Now.ToString("dd/MM/yyyy"));
             wt.WriteLine(checkedListBox1.Items.Count);
@@ -416,7 +411,7 @@ namespace WhatchaDoin
         private void AddCommentToolStripMenuItem_Click(object sender, EventArgs e)
         {
             checkedListBox1.SelectedIndex = selectItem;
-            String fileDir = @"C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\Comment" + Form1.selectItem.ToString() + ".txt";
+            String fileDir ="Comment" + Form1.selectItem.ToString() + ".txt";
             try
             {
                 if (File.Exists(fileDir))
@@ -443,7 +438,7 @@ namespace WhatchaDoin
 
         private void CheckedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            String fileDir = @"C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\Comment" + Form1.selectItem.ToString() + ".txt";
+            String fileDir = "Comment" + Form1.selectItem.ToString() + ".txt";
             try
             {
                 if (File.Exists(fileDir))

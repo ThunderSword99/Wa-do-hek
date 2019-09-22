@@ -11,20 +11,21 @@ using System.Windows.Forms;
 
 namespace WhatchaDoin
 {
-    public partial class HistoryForm : Form
+    public partial class frmDetails : Form
     {
-        public HistoryForm()
+        public frmDetails()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(6, 150);
             this.ShowInTaskbar = false;
+            this.WindowState = FormWindowState.Maximized;
         }
 
         public void SetText()
         {
-            string HistoryDir = @"C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\History.txt";// Đường dẫn đến History
-            string HistoryData = File.ReadAllText(HistoryDir);// Lưu từng dòng trong txt
+            string HistoryDir = @"History.txt";// Đường dẫn đến History
+            string HistoryData = File.ReadAllText(HistoryDir);
             textBox1.Text = HistoryData;
         }
 
@@ -34,6 +35,34 @@ namespace WhatchaDoin
         }
 
         private void VScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            chartMain.Series["Completing"].Points.AddXY("1", 7);
+            chartMain.Series["Completing"].Points.AddXY("2", 5);
+            chartMain.Series["Completing"].Points.AddXY("3", 8);
+            chartMain.Series["Completing"].Points.AddXY("4", 2);
+            chartMain.Series["Completing"].Points.AddXY("5", 0);
+            chartMain.Series["Completing"].Points.AddXY("6", 20);
+
+            chartMain.Series["Uncompleting"].Points.AddXY("5", 2);
+            chartMain.Series["Uncompleting"].Points.AddXY("5", 4);
+            chartMain.Series["Uncompleting"].Points.AddXY("5", 1);
+            chartMain.Series["Uncompleting"].Points.AddXY("5", 3);
+            chartMain.Series["Uncompleting"].Points.AddXY("5", 7);
+
+            radarChart.Series["Test"].Points.AddXY("1", 2);
+            radarChart.Series["Test"].Points.AddXY("2", 7);
+            radarChart.Series["Test"].Points.AddXY("3", 10);
+            radarChart.Series["Test"].Points.AddXY("4", 4);
+            radarChart.Series["Test"].Points.AddXY("5", 5);
+            radarChart.Series["Test"].Points.AddXY("6", 8);
+        }
+
+        private void Chart1_Click(object sender, EventArgs e)
         {
 
         }

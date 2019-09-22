@@ -12,4 +12,6 @@ C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\bin\Debug\WinFormAnimation.d
 C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\obj\Debug\WhatchaDoin.csproj.CopyComplete
 C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\obj\Debug\WhatchaDoin.csprojAssemblyReference.cache
 C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\obj\Debug\WhatchaDoin.Form2.resources
-C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\obj\Debug\WhatchaDoin.HistoryForm.resources
+C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\obj\Debug\WhatchaDoin.frmDetails.resources
+C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\bin\Debug\DevComponents.DotNetBar2.dll
+C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\bin\Debug\DevComponents.DotNetBar2.xml

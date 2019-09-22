@@ -1,31 +1,14 @@
-﻿*Removing a target
-*Adding new target
-*Adding new target
-*Adding new target
-*Adding new target
-*Adding new target
-*Adding new target
-*Adding new target
-*Adding new target
-*Adding new target
-*Adding new target
-*Adding new target
-*Adding new target
-*Adding new target
-*Adding new target
-*Adding new target
-*Adding new target
-*Adding new target
-*Adding new target
-*Adding new target
-*Adding new target
-*Adding new target
-*Adding new target
-*Adding new target
-*Adding new target
-*Adding new target
-*Adding new target
-*Adding new target
-*Adding new target
-*Adding new target
-*Adding new target
+﻿==========9/23/2019===========
+*Adding 3 targets:
+- Go shopping
+- Code c#
+- Learn react native
+*Finish 2 targets
+*1 Uncompleting target
+==========9/22/2019===========
+*Adding 3 targets:
+- Go shopping
+- Code c#
+- Learn react native
+*Finish 2 targets
+*1 Uncompleting target

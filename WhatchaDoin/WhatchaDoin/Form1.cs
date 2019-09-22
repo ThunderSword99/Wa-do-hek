@@ -39,6 +39,8 @@ namespace WhatchaDoin
         // Tự thêm
         private Label label3;
         Form2 CommentForm;
+        public frmDetails HF = new frmDetails();
+
         public class CustomCheckedListBox : CheckedListBox
         {
 
@@ -222,7 +224,7 @@ namespace WhatchaDoin
         //Đếm thời gian còn lại
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            if (timeRemaining.TotalSeconds <= 10)
+            if (timeRemaining.TotalSeconds <= 100)
             {
                 timer1.Stop();
                 timer2.Stop();
@@ -384,11 +386,6 @@ namespace WhatchaDoin
             wt.Close();
         }
 
-        private void SaveNoteForm2()
-        {
-
-        }
-
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             SaveTodayTargets();
@@ -471,7 +468,6 @@ namespace WhatchaDoin
 
         private void HistoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            HistoryForm HF = new HistoryForm();
             HF.Show();
         }
     }

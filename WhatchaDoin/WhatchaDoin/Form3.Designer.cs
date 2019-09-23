@@ -31,17 +31,16 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, 0D);
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.chartMain = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.button1 = new System.Windows.Forms.Button();
             this.radarChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartMain)).BeginInit();
@@ -84,8 +83,14 @@
             chartArea1.Name = "ChartArea1";
             this.chartMain.ChartAreas.Add(chartArea1);
             legend1.AutoFitMinFontSize = 6;
+            legend1.BackColor = System.Drawing.Color.Wheat;
+            legend1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.Center;
+            legend1.BackHatchStyle = System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle.BackwardDiagonal;
+            legend1.BorderColor = System.Drawing.SystemColors.GrayText;
+            legend1.BorderWidth = 2;
             legend1.ItemColumnSpacing = 1;
-            legend1.MaximumAutoSize = 20F;
+            legend1.LegendStyle = System.Windows.Forms.DataVisualization.Charting.LegendStyle.Column;
+            legend1.MaximumAutoSize = 15F;
             legend1.Name = "Legend1";
             this.chartMain.Legends.Add(legend1);
             this.chartMain.Location = new System.Drawing.Point(372, 38);
@@ -103,10 +108,6 @@
             series1.MarkerSize = 8;
             series1.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
             series1.Name = "Completing";
-            dataPoint1.MarkerColor = System.Drawing.Color.Lime;
-            dataPoint1.MarkerSize = 3;
-            dataPoint1.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Star5;
-            series1.Points.Add(dataPoint1);
             series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Date;
             series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
             series2.ChartArea = "ChartArea1";
@@ -119,9 +120,20 @@
             series2.MarkerSize = 8;
             series2.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
             series2.Name = "Uncompleting";
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series3.Color = System.Drawing.Color.Blue;
+            series3.Legend = "Legend1";
+            series3.MarkerBorderColor = System.Drawing.Color.Blue;
+            series3.MarkerBorderWidth = 2;
+            series3.MarkerColor = System.Drawing.Color.White;
+            series3.MarkerSize = 8;
+            series3.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
+            series3.Name = "Targets";
             this.chartMain.Series.Add(series1);
             this.chartMain.Series.Add(series2);
-            this.chartMain.Size = new System.Drawing.Size(982, 662);
+            this.chartMain.Series.Add(series3);
+            this.chartMain.Size = new System.Drawing.Size(982, 668);
             this.chartMain.TabIndex = 3;
             title1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             title1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.HorizontalCenter;
@@ -134,35 +146,29 @@
             title1.Text = "Details";
             this.chartMain.Titles.Add(title1);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1046, 9);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
-            // 
             // radarChart
             // 
             this.radarChart.BackColor = System.Drawing.SystemColors.ControlLight;
-            chartArea2.Area3DStyle.Enable3D = true;
             chartArea2.BackColor = System.Drawing.Color.Azure;
             chartArea2.BackImageTransparentColor = System.Drawing.Color.White;
             chartArea2.BorderColor = System.Drawing.Color.White;
             chartArea2.BorderWidth = 5;
             chartArea2.Name = "ChartArea1";
+            chartArea2.Position.Auto = false;
+            chartArea2.Position.Height = 100F;
+            chartArea2.Position.Width = 100F;
             this.radarChart.ChartAreas.Add(chartArea2);
+            legend2.Enabled = false;
             legend2.Name = "Legend1";
             this.radarChart.Legends.Add(legend2);
             this.radarChart.Location = new System.Drawing.Point(12, 346);
             this.radarChart.Name = "radarChart";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Radar;
-            series3.Legend = "Legend1";
-            series3.Name = "Test";
-            this.radarChart.Series.Add(series3);
+            this.radarChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Radar;
+            series4.Legend = "Legend1";
+            series4.Name = "achieve";
+            this.radarChart.Series.Add(series4);
             this.radarChart.Size = new System.Drawing.Size(354, 354);
             this.radarChart.TabIndex = 5;
             this.radarChart.Click += new System.EventHandler(this.Chart1_Click);
@@ -175,7 +181,6 @@
             this.BackColor = System.Drawing.Color.LightGoldenrodYellow;
             this.ClientSize = new System.Drawing.Size(1366, 717);
             this.Controls.Add(this.radarChart);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.chartMain);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.groupBox1);
@@ -196,7 +201,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartMain;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataVisualization.Charting.Chart radarChart;
     }
 }

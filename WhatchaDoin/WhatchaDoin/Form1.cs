@@ -39,6 +39,19 @@ namespace WhatchaDoin
         // Tự thêm
         private Label label3;
         Form2 CommentForm;
+
+
+
+
+
+
+
+
+
+
+
+
+
         public frmDetails HF = new frmDetails();
 
         public class CustomCheckedListBox : CheckedListBox

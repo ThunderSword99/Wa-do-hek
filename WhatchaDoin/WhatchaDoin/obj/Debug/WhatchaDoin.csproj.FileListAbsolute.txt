@@ -15,3 +15,6 @@ C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\obj\Debug\WhatchaDoin.Form2.
 C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\obj\Debug\WhatchaDoin.frmDetails.resources
 C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\bin\Debug\DevComponents.DotNetBar2.dll
 C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\bin\Debug\DevComponents.DotNetBar2.xml
+C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\bin\Debug\EPPlus.dll
+C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\bin\Debug\EPPlus.xml
+C:\Users\ADMIN\source\repos\WhatchaDoin\WhatchaDoin\obj\Debug\WhatchaDoin.csproj.ResolveComReference.cache

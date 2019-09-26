@@ -37,13 +37,21 @@ namespace WhatchaDoin
         private string startTimeline;// Thời gian bắt đầu thực hiện
         private TimeSpan timeLeft;// Thời gian còn lại
         private int todayScore;// Điểm ngày hôm nay 
+        private int lucky;
+        // Các thành tựu
         private int totalIncompleteTargets;// Tổng các chỉ tiêu chưa hoàn thành
         private int relaxingDays;// Tổng ngày nghỉ
         private int perfectScore;// Tổng số ngày đạt điểm tuyệt đối liên tiếp
-        private int totalScore;// Tổng điểm đã làm được
+        private int totalPoint;// Tổng điểm đã làm được
+        private int luckyPoint;// Điểm lucky
+        private int challengePoint; // Số điểm challenge
+        private int workingDays;
         // Tự thêm
         private Label label3;
         Form2 CommentForm;
+        private string nowDate;
+        private string previousDate;
+
 
         public void ConnectToExcelFile()
         {
@@ -62,9 +70,17 @@ namespace WhatchaDoin
 
         public bool IfTodayIsToday()
         {
-            string date = DateTime.Now.ToString("MM/dd/yyyy");
-            String historyDate = firstWorksheet.Cells[6, 2].Value.ToString();
-            if (date.Equals(historyDate))
+            nowDate = DateTime.Now.ToString("MM/dd/yyyy");
+            try
+            {
+                previousDate = firstWorksheet.Cells[6, 2].Value.ToString();
+            }
+            catch
+            {
+                previousDate = nowDate;
+                firstWorksheet.Cells[6, 2].Value = nowDate;
+            }
+            if (nowDate.Equals(previousDate))
             {
                 return true;
             }
@@ -114,7 +130,7 @@ namespace WhatchaDoin
             totalIncompleteTargets = (int)TotalData[0][0];
             relaxingDays = (int)TotalData[1][0];
             perfectScore = (int)TotalData[2][0];
-            totalScore = (int)TotalData[3][0];
+            totalPoint = (int)TotalData[3][0];
         }
 
         private void SetParameter()
@@ -128,9 +144,11 @@ namespace WhatchaDoin
             totalIncompleteTargets = int.Parse(firstWorksheet.Cells[19, 2].Value.ToString());
             relaxingDays = int.Parse(firstWorksheet.Cells[15, 2].Value.ToString());
             perfectScore = int.Parse(firstWorksheet.Cells[16, 2].Value.ToString());
-            totalScore = int.Parse(firstWorksheet.Cells[13, 2].Value.ToString());
+            totalPoint = int.Parse(firstWorksheet.Cells[13, 2].Value.ToString());
+            lucky = 0;
+            challengePoint = 0;
         }
-        
+
         private void SetTextToLabel()
         {
             label3.Text = text3 + targets.ToString();
@@ -142,7 +160,7 @@ namespace WhatchaDoin
             label9.Text = text9 + totalIncompleteTargets.ToString();
             label10.Text = text10 + relaxingDays.ToString();
             label11.Text = text11 + perfectScore.ToString();
-            label12.Text = text12 + totalScore.ToString();
+            label12.Text = text12 + totalPoint.ToString();
 
         }
 
@@ -176,7 +194,7 @@ namespace WhatchaDoin
         }
 
         private void UpdateTotalData()
-        {         
+        {
             ////Lấy giữ liệu tổng từ TodayData.txt lên Codesources
             //string TotalDF = "TotalData.txt";// Đường dẫn đến TodayData
             //string[] TotalData = File.ReadAllLines(TotalDF);// Lưu từng dòng trong txt
@@ -218,7 +236,7 @@ namespace WhatchaDoin
             //wt.Flush();
             //wt.Close();
         }
-        
+
         private void ChangeTodayDataTxt()
         {
             FileStream fs = new FileStream("TodayData.txt", FileMode.Open);
@@ -245,7 +263,7 @@ namespace WhatchaDoin
                 //Xóa hết comment items
                 try
                 {
-                    for (int i=0;i<=100;i++)
+                    for (int i = 0; i <= 100; i++)
                     {
                         string dirName = "Comment" + i + ".txt";
                         File.Delete(dirName);
@@ -255,7 +273,7 @@ namespace WhatchaDoin
                 {
 
                 }
-               
+
             }
             else
             {
@@ -332,7 +350,7 @@ namespace WhatchaDoin
             selectItem = checkedListBox1.IndexFromPoint(e.X, e.Y);
             checkedListBox1.SelectedIndex = selectItem;
 
-          
+
 
             if (e.Button == MouseButtons.Right)
             {
@@ -345,7 +363,7 @@ namespace WhatchaDoin
             }
         }
 
-        
+
 
         private void RemoveToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -414,17 +432,53 @@ namespace WhatchaDoin
                 }
                 wt.Flush();
                 wt.Close();
-            }      
+            }
         }
 
         private int NullColumn(int r)
         {
             int c = 1;
-            while (firstWorksheet.Cells[r,c].Value != null)
+            while (firstWorksheet.Cells[r, c].Value != null)
             {
                 c++;
             }
             return c;
+        }
+
+        private void UpdateAchievement()
+        {
+            // Lấy giữ liệu các thành tựu từ excel
+            totalPoint = int.Parse(firstWorksheet.Cells[13, 2].Value.ToString());
+            workingDays = int.Parse(firstWorksheet.Cells[14, 2].Value.ToString());
+            relaxingDays = int.Parse(firstWorksheet.Cells[15, 2].Value.ToString());
+            perfectScore = int.Parse(firstWorksheet.Cells[16, 2].Value.ToString());
+            challengePoint = int.Parse(firstWorksheet.Cells[17, 2].Value.ToString());
+            luckyPoint = int.Parse(firstWorksheet.Cells[18, 2].Value.ToString());
+            totalIncompleteTargets = int.Parse(firstWorksheet.Cells[19, 2].Value.ToString());
+            // Update thành tựu
+            totalPoint += targets;
+            if (targets != 0){
+                workingDays++;
+            }
+            else
+            {
+                relaxingDays++;
+            }
+            if (targets == completeTargets)
+            {
+                perfectScore += 2 * targets;
+            }
+            // Challenge point
+            luckyPoint += lucky;
+            totalIncompleteTargets += incompleteTargets;
+            // Lưu giá trị cho các thành tựu
+            firstWorksheet.Cells[13, 2].Value = totalPoint;
+            firstWorksheet.Cells[14, 2].Value = workingDays;
+            firstWorksheet.Cells[15, 2].Value = relaxingDays;
+            firstWorksheet.Cells[16, 2].Value = perfectScore;
+            firstWorksheet.Cells[17, 2].Value = challengePoint;
+            firstWorksheet.Cells[18, 2].Value = luckyPoint;
+            firstWorksheet.Cells[19, 2].Value = totalIncompleteTargets;
         }
 
         private void SaveData()
@@ -438,6 +492,9 @@ namespace WhatchaDoin
             }
             else
             {
+                // Cập nhật mới các thành tựu
+                UpdateAchievement();
+                // Lưu giữ liệu ngày hôm qua
                 int nextColumn = NullColumn(8);
                 for (int i = 3; i <= 6; i++)
                 {    
@@ -546,6 +603,7 @@ namespace WhatchaDoin
             Random rnd = new Random();
             int luckyNumber = rnd.Next(1, 11);
             MessageBox.Show("Your lucky number is: " + luckyNumber.ToString(),"Have a good day!!");
+            lucky = luckyNumber;
         }
     }
 }

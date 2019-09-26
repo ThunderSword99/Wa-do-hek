@@ -8,12 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using OfficeOpenXml;
 
 namespace WhatchaDoin
 {
 
     public partial class Form1 : Form
     {
+        ExcelPackage pkgDetails;// Tạo Package excel để chứa file excel
+        string path = string.Empty;// Tạo đường dẫn rỗng
+        ExcelWorksheet firstWorksheet;// Tạo worksheet để lấy worksheet trong excel
+
         // Đặt text mặc định để hiển thị
         private string text3 = "- Số chỉ tiêu: ";
         private string text4 = "- Chỉ tiêu đã hoàn thành: ";
@@ -23,79 +28,128 @@ namespace WhatchaDoin
         private string text8 = "- Điểm ngày hôm nay: ";
         private string text9 = "- Số nhiệm vụ đã bỏ: ";
         private string text10 = "- Số ngày nghỉ ngơi: ";
-        private string text11 = "- Điểm tuyệt đối liên tiếp: ";
+        private string text11 = "- Điểm tuyệt đối: ";
         private string text12 = "- Tổng điểm: ";
         // Đặt thông số
-        private int targets = 0; // Số chỉ tiêu đề ra
-        private int completeTargets = 0;// Số chỉ tiêu đã hoàn thành 
-        private int uncompleteTargets = 0;// Số chỉ tiêu chưa hoàn thành
-        private string timeBeginning = DateTime.Now.ToString("h:mm tt");// Thời gian bắt đầu thực hiện
-        private TimeSpan timeRemaining = new TimeSpan(24, 0, 0) - DateTime.Now.TimeOfDay;// Thời gian còn lại
-        private int todayScore = 0;// Điểm ngày hôm nay 
-        private int totalUncompleteTargets = 0;// Tổng các chỉ tiêu chưa hoàn thành
-        private int relaxingDay = 0;// Tổng ngày nghỉ
-        private int perfectScoreInARow = 0;// Tổng số ngày đạt điểm tuyệt đối liên tiếp
-        private int totalScore = 0;// Tổng điểm đã làm được
+        private int targets; // Số chỉ tiêu đề ra
+        private int completeTargets;// Số chỉ tiêu đã hoàn thành 
+        private int incompleteTargets;// Số chỉ tiêu chưa hoàn thành
+        private string startTimeline;// Thời gian bắt đầu thực hiện
+        private TimeSpan timeLeft;// Thời gian còn lại
+        private int todayScore;// Điểm ngày hôm nay 
+        private int totalIncompleteTargets;// Tổng các chỉ tiêu chưa hoàn thành
+        private int relaxingDays;// Tổng ngày nghỉ
+        private int perfectScore;// Tổng số ngày đạt điểm tuyệt đối liên tiếp
+        private int totalScore;// Tổng điểm đã làm được
         // Tự thêm
         private Label label3;
         Form2 CommentForm;
 
-
-
-
-
-
-
-
-
-
-
-
-
-        public frmDetails HF = new frmDetails();
-
-        public class CustomCheckedListBox : CheckedListBox
+        public void ConnectToExcelFile()
         {
+            try
+            {
+                path = "Details.xlsx";// Link đường đẫn
+                pkgDetails = new ExcelPackage(new FileInfo(path));// Khởi tạo pkg
+                firstWorksheet = pkgDetails.Workbook.Worksheets[1];// Tạo worksheet lưu worksheet đầu tiên
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đường dẫn bị lỗi");
+            }
 
+        }
+
+        public bool IfTodayIsToday()
+        {
+            string date = DateTime.Now.ToString("MM/dd/yyyy");
+            String historyDate = firstWorksheet.Cells[6, 2].Value.ToString();
+            if (date.Equals(historyDate))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public void CreateFiles()
+        {
+            string fileName = @"History.txt";
+            try
+            {
+                if (File.Exists(fileName))
+                {
+
+                }
+                else
+                {
+                    FileStream fs = File.Create(fileName);
+                }
+            }
+            catch (Exception Ex)
+            {
+                Console.WriteLine(Ex.ToString());
+            }
+            fileName = @"Details.xlsx";
+            try
+            {
+                if (File.Exists(fileName))
+                {
+
+                }
+                else
+                {
+                    FileStream fs = File.Create(fileName);
+                }
+            }
+            catch (Exception Ex)
+            {
+                Console.WriteLine(Ex.ToString());
+            }
         }
 
         private void LoadingTotalData()
         {
-            string TotalDF = "TodayData.txt";// Đường dẫn đến TodayData
+            string TotalDF = @"TodayData.txt";// Đường dẫn đến TodayData
             string[] TotalData = File.ReadAllLines(TotalDF);// Lưu từng dòng trong txt
-            totalUncompleteTargets = (int)TotalData[0][0];
-            relaxingDay = (int)TotalData[1][0];
-            perfectScoreInARow = (int)TotalData[2][0];
+            totalIncompleteTargets = (int)TotalData[0][0];
+            relaxingDays = (int)TotalData[1][0];
+            perfectScore = (int)TotalData[2][0];
             totalScore = (int)TotalData[3][0];
         }
-        private void SettingFormDefault()
+
+        private void SetParameter()
         {
-            string TodayDF = "TodayData.txt";// Đường dẫn đến TodayData
-            string[] TodayData = File.ReadAllLines(TodayDF);// Lưu từng dòng trong txt
-            timeBeginning = TodayData[4];
-            //Đặt mặc định
-            this.ShowInTaskbar = false; // Ẩn không hiển thị ứng dụng dưới taskbar
-            this.CenterToScreen();// Cho form ra giữa màn hình
-            timer2.Start();// Chạy load form liên tục
-            //Đặt các thông số cho label mặc định
-            circularProgressBar1.Value = 0;// Đặt mức làm nhiệm vụ = 0
+            targets = checkedListBox1.Items.Count;
+            completeTargets = checkedListBox1.CheckedItems.Count;
+            incompleteTargets = targets - completeTargets;
+            startTimeline = (DateTime.Parse(firstWorksheet.Cells[1, 2].Value.ToString())).ToString("h:mm tt");
+            timeLeft = new TimeSpan(24, 0, 0) - DateTime.Now.TimeOfDay;
+            todayScore = completeTargets;
+            totalIncompleteTargets = int.Parse(firstWorksheet.Cells[19, 2].Value.ToString());
+            relaxingDays = int.Parse(firstWorksheet.Cells[15, 2].Value.ToString());
+            perfectScore = int.Parse(firstWorksheet.Cells[16, 2].Value.ToString());
+            totalScore = int.Parse(firstWorksheet.Cells[13, 2].Value.ToString());
+        }
+        
+        private void SetTextToLabel()
+        {
             label3.Text = text3 + targets.ToString();
-            label4.Text = text4 + completeTargets.ToString();         
-            label5.Text = text5 + uncompleteTargets.ToString();
-            label6.Text = text6 + timeBeginning;
-            timer1.Start();//Update label 7
+            label4.Text = text4 + completeTargets.ToString();
+            label5.Text = text5 + incompleteTargets.ToString();
+            label6.Text = text6 + startTimeline.ToString();
+            label7.Text = text7 + timeLeft.ToString();
             label8.Text = text8 + todayScore.ToString();
-            //Đặt mặc định thông số tổng
-            string DF = "TotalData.txt";// Đường dẫn đến Data  
-            string[] TotalData = File.ReadAllLines(DF);// Lưu từng dòng trong txt
-            totalUncompleteTargets = Int32.Parse(TotalData[0].ToString());
-            relaxingDay = Int32.Parse(TotalData[1].ToString());
-            perfectScoreInARow = Int32.Parse(TotalData[2].ToString());
-            totalScore = Int32.Parse(TotalData[3].ToString());
-            label9.Text = text9 + totalUncompleteTargets.ToString();
-            label10.Text = text10 + relaxingDay.ToString();
-            label11.Text = text11 + perfectScoreInARow.ToString();
+            label9.Text = text9 + totalIncompleteTargets.ToString();
+            label10.Text = text10 + relaxingDays.ToString();
+            label11.Text = text11 + perfectScore.ToString();
             label12.Text = text12 + totalScore.ToString();
+
+        }
+
+        private void SetDefault()
+        {
+            SetParameter();
+            SetTextToLabel();
         }
 
         private void LoadingTodayTargets()
@@ -123,46 +177,46 @@ namespace WhatchaDoin
 
         private void UpdateTotalData()
         {         
-            //Lấy giữ liệu tổng từ TodayData.txt lên Codesources
-            string TotalDF = "TotalData.txt";// Đường dẫn đến TodayData
-            string[] TotalData = File.ReadAllLines(TotalDF);// Lưu từng dòng trong txt
-            //lấy dữ liệu tổng
-            totalUncompleteTargets = Int32.Parse(TotalData[0].ToString()); 
-            relaxingDay = Int32.Parse(TotalData[1].ToString());
-            perfectScoreInARow = Int32.Parse(TotalData[2].ToString());
-            totalScore = Int32.Parse(TotalData[3].ToString());
-            //Lấy giữ liệu từ TodayData.txt lên Codesouces
-            string TodayDF = "TodayData.txt";// Đường dẫn đến TodayData
-            string[] TodayData = File.ReadAllLines(TodayDF);// Lưu từng dòng trong txt
-            //Cập nhật dữ liệu tổng
-            totalUncompleteTargets += Int32.Parse(TodayData[3].ToString());
-            if (TodayData[2][0] == '0')
-            {
-                relaxingDay += 1;
-                perfectScoreInARow = 0;
-            }
-            else
-            {
-                relaxingDay = 0;
-            }
-            if (TodayData[2][0] == TodayData[1][0] && TodayData[2][0]!='0')
-            {
-                perfectScoreInARow += 1;
-            }
-            else
-            {
-                perfectScoreInARow = 0;
-            }
-            totalScore += Int32.Parse(TodayData[2].ToString());
-            //Ghi lại giữ liệu tổng vào TotalData.txt
-            FileStream fs = new FileStream("TotalData.txt", FileMode.Open);
-            StreamWriter wt = new StreamWriter(fs, Encoding.UTF8);
-            wt.WriteLine(totalUncompleteTargets);
-            wt.WriteLine(relaxingDay);
-            wt.WriteLine(perfectScoreInARow);
-            wt.WriteLine(totalScore);
-            wt.Flush();
-            wt.Close();
+            ////Lấy giữ liệu tổng từ TodayData.txt lên Codesources
+            //string TotalDF = "TotalData.txt";// Đường dẫn đến TodayData
+            //string[] TotalData = File.ReadAllLines(TotalDF);// Lưu từng dòng trong txt
+            ////lấy dữ liệu tổng
+            //totalUncompleteTargets = Int32.Parse(TotalData[0].ToString()); 
+            //relaxingDay = Int32.Parse(TotalData[1].ToString());
+            //perfectScoreInARow = Int32.Parse(TotalData[2].ToString());
+            //totalScore = Int32.Parse(TotalData[3].ToString());
+            ////Lấy giữ liệu từ TodayData.txt lên Codesouces
+            //string TodayDF = "TodayData.txt";// Đường dẫn đến TodayData
+            //string[] TodayData = File.ReadAllLines(TodayDF);// Lưu từng dòng trong txt
+            ////Cập nhật dữ liệu tổng
+            //totalUncompleteTargets += Int32.Parse(TodayData[3].ToString());
+            //if (TodayData[2][0] == '0')
+            //{
+            //    relaxingDay += 1;
+            //    perfectScoreInARow = 0;
+            //}
+            //else
+            //{
+            //    relaxingDay = 0;
+            //}
+            //if (TodayData[2][0] == TodayData[1][0] && TodayData[2][0]!='0')
+            //{
+            //    perfectScoreInARow += 1;
+            //}
+            //else
+            //{
+            //    perfectScoreInARow = 0;
+            //}
+            //totalScore += Int32.Parse(TodayData[2].ToString());
+            ////Ghi lại giữ liệu tổng vào TotalData.txt
+            //FileStream fs = new FileStream("TotalData.txt", FileMode.Open);
+            //StreamWriter wt = new StreamWriter(fs, Encoding.UTF8);
+            //wt.WriteLine(totalUncompleteTargets);
+            //wt.WriteLine(relaxingDay);
+            //wt.WriteLine(perfectScoreInARow);
+            //wt.WriteLine(totalScore);
+            //wt.Flush();
+            //wt.Close();
         }
         
         private void ChangeTodayDataTxt()
@@ -173,7 +227,7 @@ namespace WhatchaDoin
             wt.WriteLine(0);
             wt.WriteLine(0);
             wt.WriteLine(0);
-            wt.WriteLine(timeBeginning);
+            wt.WriteLine(timeLeft);
             wt.Flush();
             wt.Close();
         }
@@ -213,10 +267,8 @@ namespace WhatchaDoin
         public Form1()
         {
             InitializeComponent();
-            LoadingTodayData();
-            SettingFormDefault();
-            CommentForm = new Form2();
-            
+            timer1.Enabled = true;
+            timer2.Enabled = true;
         }
 
         //Button submit
@@ -228,16 +280,13 @@ namespace WhatchaDoin
                 textBox1.Text = textBox1.Text.Substring(0, 1).ToString().ToUpper() + textBox1.Text.Substring(1).ToString();
                 checkedListBox1.Items.Add(textBox1.Text);
                 textBox1.Text = null;
-
-                string path = "History.txt";
-                File.AppendAllText(path,"*Adding new target" + Environment.NewLine);
             }
 
         }
         //Đếm thời gian còn lại
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            if (timeRemaining.TotalSeconds <= 100)
+            if (timeLeft.TotalSeconds <= 100)
             {
                 timer1.Stop();
                 timer2.Stop();
@@ -245,8 +294,8 @@ namespace WhatchaDoin
             }
             else
             {
-                timeRemaining = timeRemaining.Subtract(new TimeSpan(0, 0, 1));
-                label7.Text = text7 + timeRemaining.ToString(@"hh\:mm\:ss");
+                timeLeft = timeLeft.Subtract(new TimeSpan(0, 0, 1));
+                label7.Text = text7 + timeLeft.ToString(@"hh\:mm\:ss");
             }
         }
         //Load form mỗi 100 milisecond
@@ -256,8 +305,8 @@ namespace WhatchaDoin
             label3.Text = text3 + targets.ToString();
             completeTargets = checkedListBox1.CheckedItems.Count;
             label4.Text = text4 + completeTargets.ToString();
-            uncompleteTargets = checkedListBox1.Items.Count - checkedListBox1.CheckedItems.Count;
-            label5.Text = text5 + uncompleteTargets.ToString();
+            incompleteTargets = checkedListBox1.Items.Count - checkedListBox1.CheckedItems.Count;
+            label5.Text = text5 + incompleteTargets.ToString();
             todayScore = completeTargets;
             label8.Text = text8 + todayScore.ToString();
             if (targets != 0)
@@ -368,41 +417,48 @@ namespace WhatchaDoin
             }      
         }
 
-        private void SaveTodayData()
+        private int NullColumn(int r)
         {
-            //Lưu thời gian bắt đầu
-            string TodayDF = "TodayData.txt";// Đường dẫn đến TodayData
-            string[] TodayData = File.ReadAllLines(TodayDF);// Lưu từng dòng trong txt
-            timeBeginning = TodayData[4];
-            // Lưu thông số
-            FileStream fs = new FileStream("TodayData.txt", FileMode.Open);
-            StreamWriter wt = new StreamWriter(fs, Encoding.UTF8);
-            wt.WriteLine(DateTime.Now.ToString("dd/MM/yyyy"));
-            wt.WriteLine(checkedListBox1.Items.Count);
-            int cnt1 = 0;
-            int cnt2 = 0;
-            for (int i = 0; i < checkedListBox1.Items.Count; i++)
+            int c = 1;
+            while (firstWorksheet.Cells[r,c].Value != null)
             {
-                if (checkedListBox1.GetItemCheckState(i) == CheckState.Checked)
-                {
-                    cnt1++;
-                }
-                else
-                {
-                    cnt2++;
-                }
+                c++;
             }
-            wt.WriteLine(cnt1);
-            wt.WriteLine(cnt2);
-            wt.WriteLine(timeBeginning);
-            wt.Flush();
-            wt.Close();
+            return c;
+        }
+
+        private void SaveData()
+        {
+            if (IfTodayIsToday())
+            {
+                firstWorksheet.Cells[3, 2].Value = targets;
+                firstWorksheet.Cells[4, 2].Value = completeTargets;
+                firstWorksheet.Cells[5, 2].Value = incompleteTargets;
+                pkgDetails.Save();
+            }
+            else
+            {
+                int nextColumn = NullColumn(8);
+                for (int i = 3; i <= 6; i++)
+                {    
+                    firstWorksheet.Cells[i, 2].Copy(firstWorksheet.Cells[i+5, nextColumn]);
+                }
+                string date = DateTime.Now.ToString("MM/dd/yyyy");
+                string time = DateTime.Now.ToString("h:mm tt");
+                firstWorksheet.Cells[1, 2].Value = time;
+                firstWorksheet.Cells[3, 2].Value = targets;
+                firstWorksheet.Cells[4, 2].Value = completeTargets;
+                firstWorksheet.Cells[5, 2].Value = incompleteTargets;
+                firstWorksheet.Cells[6, 2].Value = date;
+                pkgDetails.Save();
+
+            }
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             SaveTodayTargets();
-            SaveTodayData();
+            SaveData();
         }
         //Nhấn Enter trong textbox1 sẽ gửi lên checklistbox
         private void TextBox1_KeyDown(object sender, KeyEventArgs e)
@@ -476,12 +532,20 @@ namespace WhatchaDoin
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            ConnectToExcelFile();
+            SetDefault();
         }
 
         private void HistoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            HF.Show();
+            
+        }
+
+        private void PictureBox1_Click(object sender, EventArgs e)
+        {
+            Random rnd = new Random();
+            int luckyNumber = rnd.Next(1, 11);
+            MessageBox.Show("Your lucky number is: " + luckyNumber.ToString(),"Have a good day!!");
         }
     }
 }

@@ -189,9 +189,9 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(365, 588);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(126, 13);
+            this.label11.Size = new System.Drawing.Size(87, 13);
             this.label11.TabIndex = 13;
-            this.label11.Text = "- Điểm tuyệt đối liên tiếp: ";
+            this.label11.Text = "- Điểm tuyệt đối: ";
             // 
             // label12
             // 
@@ -268,6 +268,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(69, 73);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
             // label1
             // 

@@ -102,23 +102,23 @@ namespace WhatchaDoin
 
         public void AddValueToLineChart()
         {
-            try
-            {
-                for (int i = firstWorksheet.Dimension.Start.Column + 1; i <= firstWorksheet.Dimension.End.Column; i++)
-                {
-                    string targets = firstWorksheet.Cells[1, i].Value.ToString();
-                    string points = firstWorksheet.Cells[2, i].Value.ToString();
-                    string unpoints = firstWorksheet.Cells[3, i].Value.ToString();
-                    string dat = DateTime.Parse(firstWorksheet.Cells[4, i].Value.ToString()).ToString("dd/MM/yyyy");
-                    chartMain.Series["Targets"].Points.AddXY(dat, targets);
-                    chartMain.Series["Completing"].Points.AddXY(dat, points);
-                    chartMain.Series["Uncompleting"].Points.AddXY(dat, unpoints);
-                }
-            }
-            catch (Exception ex)
-            {
+            //try
+            //{
+            //    for (int i = firstWorksheet.Dimension.Start.Column + 1; i <= firstWorksheet.Dimension.End.Column; i++)
+            //    {
+            //        string targets = firstWorksheet.Cells[1, i].Value.ToString();
+            //        string points = firstWorksheet.Cells[2, i].Value.ToString();
+            //        string unpoints = firstWorksheet.Cells[3, i].Value.ToString();
+            //        string dat = DateTime.Parse(firstWorksheet.Cells[4, i].Value.ToString()).ToString("dd/MM/yyyy");
+            //        chartMain.Series["Targets"].Points.AddXY(dat, targets);
+            //        chartMain.Series["Completing"].Points.AddXY(dat, points);
+            //        chartMain.Series["Uncompleting"].Points.AddXY(dat, unpoints);
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
                 
-            }
+            //}
         }
 
         public void AddValueToCircleChart()
@@ -126,18 +126,18 @@ namespace WhatchaDoin
             try
             {
                 // Lấy giữ liệu từ excel
-                string totalPoints = firstWorksheet.Cells[6, 2].Value.ToString();
-                string consecutivePoints = firstWorksheet.Cells[7, 2].Value.ToString();
-                string relaxDay = firstWorksheet.Cells[8, 2].Value.ToString();
-                string perfectPoint = firstWorksheet.Cells[9, 2].Value.ToString();
-                string challenge = firstWorksheet.Cells[10,2].Value.ToString();
-                string attendance = firstWorksheet.Cells[11, 2].Value.ToString();
-                radarChart.Series["achieve"].Points.AddXY("Total", totalPoints);
-                radarChart.Series["achieve"].Points.AddXY("Relax", relaxDay);
-                radarChart.Series["achieve"].Points.AddXY("Perfect", perfectPoint);
-                radarChart.Series["achieve"].Points.AddXY("Challenge", challenge);
-                radarChart.Series["achieve"].Points.AddXY("Consecutive", consecutivePoints);
-                radarChart.Series["achieve"].Points.AddXY("Attendance", attendance);
+                //string totalPoints = firstWorksheet.Cells[6, 2].Value.ToString();
+                //string consecutivePoints = firstWorksheet.Cells[7, 2].Value.ToString();
+                //string relaxDay = firstWorksheet.Cells[8, 2].Value.ToString();
+                //string perfectPoint = firstWorksheet.Cells[9, 2].Value.ToString();
+                //string challenge = firstWorksheet.Cells[10,2].Value.ToString();
+                //string lucky = firstWorksheet.Cells[11, 2].Value.ToString();
+                //radarChart.Series["achieve"].Points.AddXY("Total", totalPoints);
+                //radarChart.Series["achieve"].Points.AddXY("Relax", relaxDay);
+                //radarChart.Series["achieve"].Points.AddXY("Perfect", perfectPoint);
+                //radarChart.Series["achieve"].Points.AddXY("Challenge", challenge);
+                //radarChart.Series["achieve"].Points.AddXY("Consecutive", consecutivePoints);
+                //radarChart.Series["achieve"].Points.AddXY("Lucky", lucky);
                 
             }
             catch (Exception ex)

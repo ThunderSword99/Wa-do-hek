@@ -12,3 +12,5 @@
 - Learn react native
 *Finish 2 targets
 *1 Uncompleting target
+*Adding new target
+*Adding new target

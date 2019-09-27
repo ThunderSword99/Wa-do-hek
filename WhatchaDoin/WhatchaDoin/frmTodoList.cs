@@ -13,7 +13,7 @@ using OfficeOpenXml;
 namespace WhatchaDoin
 {
 
-    public partial class Form1 : Form
+    public partial class frmTodoList : Form
     {
         ExcelPackage pkgDetails;// Tạo Package excel để chứa file excel
         string path = string.Empty;// Tạo đường dẫn rỗng
@@ -48,7 +48,7 @@ namespace WhatchaDoin
         private int workingDays;
         // Tự thêm
         private Label label3;
-        Form2 CommentForm;
+        frmComment CommentForm;
         private string nowDate;
         private string previousDate;
 
@@ -183,7 +183,7 @@ namespace WhatchaDoin
             }
         }
         // Tạo mặc định cho frmTodoList
-        public Form1()
+        public frmTodoList()
         {
             InitializeComponent();
             timer1.Enabled = true;
@@ -427,7 +427,7 @@ namespace WhatchaDoin
         private void AddCommentToolStripMenuItem_Click(object sender, EventArgs e)
         {
             checkedListBox1.SelectedIndex = selectItem;
-            String fileDir ="Comment" + Form1.selectItem.ToString() + ".txt";
+            String fileDir ="Comment" + frmTodoList.selectItem.ToString() + ".txt";
             try
             {
                 if (File.Exists(fileDir))
@@ -449,12 +449,12 @@ namespace WhatchaDoin
         // 
         private void CheckedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            String fileDir = "Comment" + Form1.selectItem.ToString() + ".txt";
+            String fileDir = "Comment" + frmTodoList.selectItem.ToString() + ".txt";
             try
             {
                 if (File.Exists(fileDir))
                 {
-                    CommentForm = new Form2();
+                    CommentForm = new frmComment();
                     CommentForm.Form2_Load(this,null);
                     CommentForm.Show();
                     this.Select();

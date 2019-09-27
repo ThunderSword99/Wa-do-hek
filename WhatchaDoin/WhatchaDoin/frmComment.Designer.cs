@@ -1,6 +1,6 @@
 ﻿namespace WhatchaDoin
 {
-    partial class Form2
+    partial class frmComment
     {
         /// <summary>
         /// Required designer variable.

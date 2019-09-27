@@ -1,6 +1,6 @@
 ﻿namespace WhatchaDoin
 {
-    partial class Form1
+    partial class frmTodoList
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTodoList));
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.circularProgressBar1 = new CircularProgressBar.CircularProgressBar();
             this.label2 = new System.Windows.Forms.Label();

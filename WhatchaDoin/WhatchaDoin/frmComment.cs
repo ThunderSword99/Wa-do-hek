@@ -11,10 +11,10 @@ using System.IO;
 
 namespace WhatchaDoin
 {
-    public partial class Form2 : Form
+    public partial class frmComment : Form
     {
         public static String textNote;
-        public Form2()
+        public frmComment()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.Manual;
@@ -28,9 +28,9 @@ namespace WhatchaDoin
         private void SaveNote()
         {
             //Kiểm tra xem nó có đang chọn items không
-            if (Form1.selectItem != -1)
+            if (frmTodoList.selectItem != -1)
             {
-                string dirName = "Comment" + Form1.selectItem + ".txt";
+                string dirName = "Comment" + frmTodoList.selectItem + ".txt";
                 //Kiểm tra text có khác rỗng
                 if (textBox1.Text == "")
                 {
@@ -50,7 +50,7 @@ namespace WhatchaDoin
         public void Form2_Load(object sender, EventArgs e)
         {
             textBox1.Text = null;
-            String fileDir = "Comment" + Form1.selectItem.ToString() + ".txt";
+            String fileDir = "Comment" + frmTodoList.selectItem.ToString() + ".txt";
             try
             {   
                 if (File.Exists(fileDir))

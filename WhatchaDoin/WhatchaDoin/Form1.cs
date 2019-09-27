@@ -287,6 +287,7 @@ namespace WhatchaDoin
             InitializeComponent();
             timer1.Enabled = true;
             timer2.Enabled = true;
+            this.CenterToScreen();
         }
 
         //Button submit
@@ -469,7 +470,7 @@ namespace WhatchaDoin
                 perfectScore += 2 * targets;
             }
             // Challenge point
-            luckyPoint += lucky;
+            luckyPoint += int.Parse(firstWorksheet.Cells[1, 5].Value.ToString());
             totalIncompleteTargets += incompleteTargets;
             // Lưu giá trị cho các thành tựu
             firstWorksheet.Cells[13, 2].Value = totalPoint;
@@ -586,10 +587,21 @@ namespace WhatchaDoin
 
         private void PictureBox1_Click(object sender, EventArgs e)
         {
-            Random rnd = new Random();
-            int luckyNumber = rnd.Next(1, 11);
-            MessageBox.Show("Your lucky number is: " + luckyNumber.ToString(),"Have a good day!!");
-            lucky = luckyNumber;
+            if (firstWorksheet.Cells[1,4].Value.ToString().Equals("False"))
+            {
+                Random rnd = new Random();
+                int luckyNumber = rnd.Next(1, 20);
+                MessageBox.Show("Your lucky number is: " + luckyNumber.ToString(), "Have a good day!!");
+                lucky = luckyNumber;
+                firstWorksheet.Cells[1, 4].Value = "True";
+                firstWorksheet.Cells[1, 5].Value = lucky;
+                pkgDetails.Save();
+            }
+            else
+            {
+                MessageBox.Show("You have got lucky today.", "Alert");
+            }
+            
         }
     }
 }

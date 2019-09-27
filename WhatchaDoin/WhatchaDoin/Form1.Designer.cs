@@ -263,7 +263,7 @@
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Default;
             this.pictureBox1.Image = global::WhatchaDoin.Properties.Resources.clover;
-            this.pictureBox1.Location = new System.Drawing.Point(432, 27);
+            this.pictureBox1.Location = new System.Drawing.Point(432, 30);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(69, 73);
             this.pictureBox1.TabIndex = 1;

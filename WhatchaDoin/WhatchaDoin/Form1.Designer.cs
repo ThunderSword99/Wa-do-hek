@@ -280,8 +280,6 @@
             this.label1.Size = new System.Drawing.Size(414, 73);
             this.label1.TabIndex = 0;
             this.label1.Text = "Whatcha Doin";
-            this.label1.Click += new System.EventHandler(this.Label1_Click);
-            this.label1.DoubleClick += new System.EventHandler(this.Label1_DoubleClick);
             // 
             // menuStrip1
             // 
@@ -344,7 +342,6 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.SizeChanged += new System.EventHandler(this.Form1_SizeChanged);
-            this.Click += new System.EventHandler(this.Form1_Click);
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);

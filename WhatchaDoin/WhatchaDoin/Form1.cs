@@ -339,7 +339,7 @@ namespace WhatchaDoin
             }
             if (selectItem == -1)
             {
-                CommentForm.Hide();
+                
             }
         }
 
@@ -526,11 +526,6 @@ namespace WhatchaDoin
             }
         }
 
-        private void Label1_Click(object sender, EventArgs e)
-        {
-           
-        }
-
         private void AddCommentToolStripMenuItem_Click(object sender, EventArgs e)
         {
             checkedListBox1.SelectedIndex = selectItem;
@@ -552,11 +547,6 @@ namespace WhatchaDoin
             {
                 Console.WriteLine(Ex.ToString());
             }
-        }
-
-        private void Form1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void CheckedListBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -582,15 +572,11 @@ namespace WhatchaDoin
             }
         }
 
-        private void Label1_DoubleClick(object sender, EventArgs e)
-        {
-            
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             ConnectToExcelFile();
             SetDefault();
+            LoadingTodayTargets();
         }
 
         private void HistoryToolStripMenuItem_Click(object sender, EventArgs e)

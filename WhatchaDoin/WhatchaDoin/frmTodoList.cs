@@ -75,7 +75,7 @@ namespace WhatchaDoin
             {
                 previousDate = firstWorksheet.Cells[6, 2].Value.ToString();
             }
-            catch
+            catch (Exception ex)
             {
                 previousDate = nowDate;
                 firstWorksheet.Cells[6, 2].Value = nowDate;
@@ -479,7 +479,9 @@ namespace WhatchaDoin
         // Vào form Details
         private void HistoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            frmDetails abc = new frmDetails();
+            abc.Show();
+            this.Hide();
         }
         // Nhận điểm may mắn mỗi ngày
         private void PictureBox1_Click(object sender, EventArgs e)

@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using OfficeOpenXml;
@@ -159,28 +153,42 @@ namespace WhatchaDoin
             SetParameter();
             SetTextToLabel();
         }
+        // Chỉnh lại lucky point = false
+        private void ResetLuckyStatus()
+        {
+            firstWorksheet.Cells[1, 4].Value = "False";
+        }
         // Load các target lên checkListBox
         private void LoadingTodayTargets()
         {
-            string[] lines = File.ReadAllLines("TodayTargets.txt");
-            foreach (string s in lines)
+            if (!IfTodayIsToday())
             {
-                try
+                ClearTodayTargets();
+                ResetLuckyStatus();
+            }
+            else
+            {
+                string[] lines = File.ReadAllLines("TodayTargets.txt");
+                foreach (string s in lines)
                 {
-                    if (s[s.Length - 1] == '1')
+                    try
                     {
-                        checkedListBox1.Items.Add(s.Substring(0, s.Length - 1), true);
+                        if (s[s.Length - 1] == '1')
+                        {
+                            checkedListBox1.Items.Add(s.Substring(0, s.Length - 1), true);
+                        }
+                        else
+                        {
+                            checkedListBox1.Items.Add(s.Substring(0, s.Length - 1), false);
+                        }
                     }
-                    else
+                    catch
                     {
-                        checkedListBox1.Items.Add(s.Substring(0, s.Length - 1), false);
-                    }
-                }
-                catch
-                {
 
+                    }
                 }
             }
+            
         }
         // Tạo mặc định cho frmTodoList
         public frmTodoList()
@@ -378,6 +386,12 @@ namespace WhatchaDoin
             firstWorksheet.Cells[18, 2].Value = luckyPoint;
             firstWorksheet.Cells[19, 2].Value = totalIncompleteTargets;
         }
+        // Xóa các mục tiêu khi chuyển ngày
+        private void ClearTodayTargets()
+        {
+            string path = "TodayTargets.txt";
+            File.WriteAllText(path, String.Empty);
+        }
         // Lưu và update các thành tựu
         private void SaveData()
         {
@@ -406,7 +420,6 @@ namespace WhatchaDoin
                 firstWorksheet.Cells[5, 2].Value = incompleteTargets;
                 firstWorksheet.Cells[6, 2].Value = date;
                 pkgDetails.Save();
-
             }
         }
         // Sự kiện đóng form

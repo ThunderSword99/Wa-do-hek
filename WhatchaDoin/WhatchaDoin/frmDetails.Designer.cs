@@ -55,7 +55,6 @@
             // chartMain
             // 
             this.chartMain.BackColor = System.Drawing.Color.Gainsboro;
-            this.chartMain.BackImage = "C:\\Users\\ADMIN\\Desktop\\Flare.jpg";
             chartArea1.Area3DStyle.Enable3D = true;
             chartArea1.Area3DStyle.PointDepth = 0;
             chartArea1.Name = "ChartArea1";
@@ -125,7 +124,6 @@
             // radarChart
             // 
             this.radarChart.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.radarChart.BackImage = "C:\\Users\\ADMIN\\Desktop\\Azur Lane.jpg";
             chartArea2.BackColor = System.Drawing.Color.Azure;
             chartArea2.BackImageTransparentColor = System.Drawing.Color.White;
             chartArea2.BorderColor = System.Drawing.Color.White;

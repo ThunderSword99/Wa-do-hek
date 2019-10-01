@@ -492,9 +492,10 @@ namespace WhatchaDoin
         // Vào form Details
         private void HistoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmDetails abc = new frmDetails();
-            abc.Show();
             this.Hide();
+            frmDetails frmDetails = new frmDetails();
+            frmDetails.Closed += (s, args) => this.Close();
+            frmDetails.Show();
         }
         // Nhận điểm may mắn mỗi ngày
         private void PictureBox1_Click(object sender, EventArgs e)

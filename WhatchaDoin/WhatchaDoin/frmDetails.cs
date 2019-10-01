@@ -91,6 +91,7 @@ namespace WhatchaDoin
             LoadDataFromExcelToChart();
             AddValueToLineChart();
             AddValueToCircleChart();
+            
         }
 
         public void SetText()
@@ -104,6 +105,7 @@ namespace WhatchaDoin
         {
             CreateDetailFiles();
             SetText();
+            dateTimePicker1.Select();
         }
 
         private void VScrollBar1_Scroll(object sender, ScrollEventArgs e)

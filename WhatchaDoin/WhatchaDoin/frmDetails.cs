@@ -180,5 +180,13 @@ namespace WhatchaDoin
         {
 
         }
+
+        private void TodolistToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmTodoList frmTodoList = new frmTodoList();
+            frmTodoList.Closed += (s, args) => this.Close();
+            frmTodoList.Show();
+        }
     }
 }

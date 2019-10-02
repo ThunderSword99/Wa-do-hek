@@ -6,7 +6,6 @@ using OfficeOpenXml;
 
 namespace WhatchaDoin
 {
-
     public partial class frmTodoList : Form
     {
         ExcelPackage pkgDetails;// Tạo Package excel để chứa file excel
@@ -407,7 +406,7 @@ namespace WhatchaDoin
                 else
                 {
                     File.AppendAllText("History.txt",
-                        checkedListBox1.Items[i].ToString() + " (X)" + Environment.NewLine);
+                        checkedListBox1.Items[i].ToString() + " (✗)" + Environment.NewLine);
                 }
             }
         }

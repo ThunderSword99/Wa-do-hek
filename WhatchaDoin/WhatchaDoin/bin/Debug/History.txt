@@ -1,6 +1,6 @@
 >>>>>>>>>>HISTORY<<<<<<<<<<
 ==========10/02/2019==========
 *Adding 3 target(s): 
-Hello (X)
+Hello (✗)
 Hello1 (✓)
 Hello2 (✓)

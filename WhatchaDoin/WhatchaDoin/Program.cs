@@ -16,7 +16,7 @@ namespace WhatchaDoin
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmDetails());
+            Application.Run(new frmTodoList());
         }
     }
 }

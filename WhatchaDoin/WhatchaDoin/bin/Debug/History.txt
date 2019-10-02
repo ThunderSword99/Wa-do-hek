@@ -1,18 +1,6 @@
-﻿>>>>>>>>>>HISTORY<<<<<<<<<<<
-==========9/23/2019===========
-*Adding 3 targets:
-- Go shopping
-- Code c#
-- Learn react native
-*Finish 2 targets
-*1 Uncompleting target
-==========9/22/2019===========
-*Adding 3 targets:
-- Go shopping
-- Code c#
-- Learn react native
-*Finish 2 targets
-*1 Uncompleting target
-*Adding new target
-*Adding new target
-*Adding new target
+>>>>>>>>>>HISTORY<<<<<<<<<<
+==========10/02/2019==========
+*Adding 3 target(s): 
+Hello (X)
+Hello1 (✓)
+Hello2 (✓)

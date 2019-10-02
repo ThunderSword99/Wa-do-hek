@@ -280,6 +280,7 @@
             this.label1.Size = new System.Drawing.Size(414, 73);
             this.label1.TabIndex = 0;
             this.label1.Text = "Whatcha Doin";
+            this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // menuStrip1
             // 
@@ -309,7 +310,7 @@
             this.historyToolStripMenuItem.Text = "History";
             this.historyToolStripMenuItem.Click += new System.EventHandler(this.HistoryToolStripMenuItem_Click);
             // 
-            // Form1
+            // frmTodoList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -336,7 +337,7 @@
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.Name = "Form1";
+            this.Name = "frmTodoList";
             this.Text = "Whatcha doin";
             this.TopMost = true;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);

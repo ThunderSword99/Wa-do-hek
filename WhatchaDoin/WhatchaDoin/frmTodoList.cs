@@ -392,6 +392,26 @@ namespace WhatchaDoin
             string path = "TodayTargets.txt";
             File.WriteAllText(path, String.Empty);
         }
+        // Lưu lịch sử
+        private void SaveHistory()
+        {
+            File.AppendAllText("History.txt", "==========" + DateTime.Now.ToString("MM/dd/yyyy") + "==========" + Environment.NewLine);
+            File.AppendAllText("History.txt", "*Adding " + checkedListBox1.Items.Count + " target(s): " + Environment.NewLine);
+            for (int i = 0; i < checkedListBox1.Items.Count; i++)
+            {
+                if (checkedListBox1.GetItemCheckState(i) == CheckState.Checked)
+                {
+                    File.AppendAllText("History.txt",
+                        checkedListBox1.Items[i].ToString() + " (✓)" + Environment.NewLine);
+                }
+                else
+                {
+                    File.AppendAllText("History.txt",
+                        checkedListBox1.Items[i].ToString() + " (X)" + Environment.NewLine);
+                }
+            }
+        }
+        
         // Lưu và update các thành tựu
         private void SaveData()
         {
@@ -404,6 +424,8 @@ namespace WhatchaDoin
             }
             else
             {
+                // Lưu targets vào hitory
+                SaveHistory();
                 // Cập nhật mới các thành tựu
                 UpdateAchievement();
                 // Lưu giữ liệu ngày hôm qua
@@ -515,6 +537,11 @@ namespace WhatchaDoin
                 MessageBox.Show("You have got lucky today.", "Alert");
             }
             
+        }
+
+        private void Label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

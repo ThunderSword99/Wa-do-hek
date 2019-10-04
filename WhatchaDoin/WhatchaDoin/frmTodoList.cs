@@ -295,7 +295,6 @@ namespace WhatchaDoin
             {
                 notifyIcon1.Visible = true;
                 this.Hide();
-                CommentForm.Hide();
             }
 
         }

@@ -188,5 +188,39 @@ namespace WhatchaDoin
             frmTodoList.Closed += (s, args) => this.Close();
             frmTodoList.Show();
         }
+
+        private void ResetToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Reset will delete all your data. Do you want to save changes?", "Confirmation", MessageBoxButtons.OKCancel);
+            if (result == DialogResult.OK)
+            {
+                for (int i=8;i<=11;i++)
+                {
+                    for (int j=2;j<=16384;j++)
+                    {
+                        if (firstWorksheet.Cells[i, j].Value!=null)
+                        {
+                            firstWorksheet.Cells[i, j].Value = null;
+                        }                        
+                    }
+                }
+                for (int i=13;i<=19;i++)
+                {
+                    if (firstWorksheet.Cells[i, 2].Value != null)
+                    {
+                        firstWorksheet.Cells[i, 2].Value = 0;
+                    }
+                }
+                pkgDetails.Save();
+            }
+            else if (result == DialogResult.Cancel)
+            {
+                //...
+            }
+            else
+            {
+                //...
+            }
+        }
     }
 }

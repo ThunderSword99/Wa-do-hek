@@ -67,12 +67,6 @@
     <Compile Include="frmTodoList.Designer.cs">
       <DependentUpon>frmTodoList.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmComment.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmComment.Designer.cs">
-      <DependentUpon>frmComment.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,9 +77,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmTodoList.resx">
       <DependentUpon>frmTodoList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmComment.resx">
-      <DependentUpon>frmComment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDetails.resx">
       <DependentUpon>frmDetails.cs</DependentUpon>

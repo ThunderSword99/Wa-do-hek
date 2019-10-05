@@ -41,7 +41,6 @@ namespace WhatchaDoin
         private int workingDays;
         // Tự thêm
         private Label label3;
-        frmComment CommentForm;
         private string nowDate;
         private string previousDate;
 
@@ -441,52 +440,6 @@ namespace WhatchaDoin
             if (e.KeyCode == Keys.Enter)
             {
                 Button1_Click(this, new EventArgs());
-            }
-        }
-        // Add comment cho mỗi item trong checkListBox
-        private void AddCommentToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            checkedListBox1.SelectedIndex = selectItem;
-            String fileDir ="Comment" + frmTodoList.selectItem.ToString() + ".txt";
-            try
-            {
-                if (File.Exists(fileDir))
-                {
-
-                }
-                else
-                {
-                    File.Create(fileDir);
-                    CommentForm.Form2_Load(this, null);
-                    CommentForm.Show();
-                }
-            }
-            catch (Exception Ex)
-            {
-                Console.WriteLine(Ex.ToString());
-            }
-        }
-        // 
-        private void CheckedListBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            String fileDir = "Comment" + frmTodoList.selectItem.ToString() + ".txt";
-            try
-            {
-                if (File.Exists(fileDir))
-                {
-                    CommentForm = new frmComment();
-                    CommentForm.Form2_Load(this,null);
-                    CommentForm.Show();
-                    this.Select();
-                }
-                else
-                {
-                    CommentForm.Hide();
-                }
-            }
-            catch (Exception Ex)
-            {
-                Console.WriteLine(Ex.ToString());
             }
         }
         // Load form

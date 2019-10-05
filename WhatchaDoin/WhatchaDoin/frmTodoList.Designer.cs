@@ -47,7 +47,6 @@
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addCommentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -69,7 +68,6 @@
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(476, 334);
             this.checkedListBox1.TabIndex = 2;
-            this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.CheckedListBox1_SelectedIndexChanged);
             this.checkedListBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.CheckedListBox1_MouseDown);
             // 
             // circularProgressBar1
@@ -214,10 +212,9 @@
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.removeToolStripMenuItem,
-            this.addCommentToolStripMenuItem});
+            this.removeToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(152, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(118, 26);
             // 
             // removeToolStripMenuItem
             // 
@@ -225,13 +222,6 @@
             this.removeToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.removeToolStripMenuItem.Text = "Remove";
             this.removeToolStripMenuItem.Click += new System.EventHandler(this.RemoveToolStripMenuItem_Click);
-            // 
-            // addCommentToolStripMenuItem
-            // 
-            this.addCommentToolStripMenuItem.Name = "addCommentToolStripMenuItem";
-            this.addCommentToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
-            this.addCommentToolStripMenuItem.Text = "Add comment";
-            this.addCommentToolStripMenuItem.Click += new System.EventHandler(this.AddCommentToolStripMenuItem_Click);
             // 
             // notifyIcon1
             // 
@@ -373,7 +363,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addCommentToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MenuStrip menuStrip1;

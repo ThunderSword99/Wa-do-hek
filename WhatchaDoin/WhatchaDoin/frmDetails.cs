@@ -212,6 +212,8 @@ namespace WhatchaDoin
                     }
                 }
                 pkgDetails.Save();
+                string path = "History.txt";
+                File.WriteAllText(path, ">>>>>>>>>>HISTORY<<<<<<<<<<");
             }
             else if (result == DialogResult.Cancel)
             {

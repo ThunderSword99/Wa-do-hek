@@ -32,7 +32,6 @@ C:\Users\ADMIN\Desktop\Wa-do-hek\WhatchaDoin\WhatchaDoin\obj\Debug\WhatchaDoin.c
 C:\Users\ADMIN\Desktop\Wa-do-hek\WhatchaDoin\WhatchaDoin\obj\Debug\WhatchaDoin.frmDetails.resources
 C:\Users\ADMIN\Desktop\Wa-do-hek\WhatchaDoin\WhatchaDoin\obj\Debug\WhatchaDoin.Properties.Resources.resources
 C:\Users\ADMIN\Desktop\Wa-do-hek\WhatchaDoin\WhatchaDoin\obj\Debug\WhatchaDoin.csproj.GenerateResource.cache
-C:\Users\ADMIN\Desktop\Wa-do-hek\WhatchaDoin\WhatchaDoin\obj\Debug\WhatchaDoin.csproj.CoreCompileInputs.cache
 C:\Users\ADMIN\Desktop\Wa-do-hek\WhatchaDoin\WhatchaDoin\obj\Debug\WhatchaDoin.csproj.CopyComplete
 C:\Users\ADMIN\Desktop\Wa-do-hek\WhatchaDoin\WhatchaDoin\obj\Debug\WhatchaDoin.exe
 C:\Users\ADMIN\Desktop\Wa-do-hek\WhatchaDoin\WhatchaDoin\obj\Debug\WhatchaDoin.pdb

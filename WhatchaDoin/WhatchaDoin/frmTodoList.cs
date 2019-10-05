@@ -272,19 +272,6 @@ namespace WhatchaDoin
         private void RemoveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             checkedListBox1.Items.RemoveAt(selectItem);
-            try
-            {
-                string dirName = "Comment" + selectItem + ".txt";
-                File.Delete(dirName);
-
-                string path = "History.txt";
-                File.AppendAllText(path, "*Adding new target" + Environment.NewLine);
-            }
-            catch
-            {
-
-            }
-            CommentForm.Hide();
         }
         // Ẩn ứng dụng dưới dạng notify và không chiểm quyền alt + tab
         private void Form1_SizeChanged(object sender, EventArgs e)
@@ -516,6 +503,7 @@ namespace WhatchaDoin
             frmDetails frmDetails = new frmDetails();
             frmDetails.Closed += (s, args) => this.Close();
             frmDetails.Show();
+            SaveTodayTargets();
         }
         // Nhận điểm may mắn mỗi ngày
         private void PictureBox1_Click(object sender, EventArgs e)

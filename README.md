@@ -2,6 +2,8 @@
 	<img src="Media/Logo.png" alt="Wa du hek">
 	
 <h1 align="center">Wa du hek
+</div>
+<div align="center">
 	<br>
 	<p>
 		<a href="https://drive.google.com/file/d/1rEJ8W8VbHTeD0YFCUa5E60ky49gCSR_7/view?usp=sharing">

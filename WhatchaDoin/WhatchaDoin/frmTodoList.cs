@@ -3,6 +3,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using OfficeOpenXml;
+using System.Threading;
 
 namespace WhatchaDoin
 {
@@ -79,14 +80,14 @@ namespace WhatchaDoin
             return false;
         }
         // Tạo file History.txt để lưu lịch sử, tạo file detail lưu giữ liệu tổng
-        public void CreateFiles()
+        private void CreateFiles()
         {
             string fileName = @"History.txt";
             try
             {
                 if (File.Exists(fileName))
                 {
-
+                    
                 }
                 else
                 {
@@ -98,6 +99,28 @@ namespace WhatchaDoin
                 Console.WriteLine(Ex.ToString());
             }
             fileName = @"Details.xlsx";
+            try
+            {
+                if (File.Exists(fileName))
+                {
+
+                }
+                else
+                {
+                    using (ExcelPackage excel = new ExcelPackage())
+                    {
+                        excel.Workbook.Worksheets.Add("Worksheet1");
+
+                        FileInfo excelFile = new FileInfo(@"Details.xlsx");
+                        excel.SaveAs(excelFile);
+                    }
+                }
+            }
+            catch (Exception Ex)
+            {
+                Console.WriteLine(Ex.ToString());
+            }
+            fileName = @"TodayTargets.txt";
             try
             {
                 if (File.Exists(fileName))
@@ -189,12 +212,72 @@ namespace WhatchaDoin
             
         }
         // Tạo mặc định cho frmTodoList
+
+        private bool CheckIfTheFirstRun()
+        {
+            if (File.Exists(@"History.txt") && File.Exists(@"TodayTargets.txt") && File.Exists(@"Details.xlsx"))
+            {
+                return false;
+            }
+            return true;
+        }
+
         public frmTodoList()
         {
             InitializeComponent();
-            timer1.Enabled = true;
-            timer2.Enabled = true;
-            this.CenterToScreen();
+            if(CheckIfTheFirstRun())
+            {
+                CreateFiles();
+                Thread.Sleep(2000);
+                ConnectToExcelFile();
+                firstWorksheet.Cells[1, 1].Value = "Start at";
+                firstWorksheet.Cells[1, 2].Value = "12:00 AM";
+                firstWorksheet.Cells[1, 3].Value = "Lucky";
+                firstWorksheet.Cells[1, 4].Value = "false";
+                firstWorksheet.Cells[1, 5].Value = "0";
+
+                firstWorksheet.Cells[2, 1].Value = "Today";
+
+                firstWorksheet.Cells[3, 1].Value = "Targets";
+                firstWorksheet.Cells[4, 1].Value = "Complete";
+                firstWorksheet.Cells[5, 1].Value = "Incomplete";
+                firstWorksheet.Cells[6, 1].Value = "Today";
+
+                firstWorksheet.Cells[7, 1].Value = "History";
+
+                firstWorksheet.Cells[8, 1].Value = "Targets";
+                firstWorksheet.Cells[9, 1].Value = "Point";
+                firstWorksheet.Cells[10, 1].Value = "Un-point";
+                firstWorksheet.Cells[11, 1].Value = "Datetime";
+
+                firstWorksheet.Cells[12, 1].Value = "Achievement";
+
+                firstWorksheet.Cells[13, 1].Value = "Total points";
+                firstWorksheet.Cells[13, 2].Value = "0";
+                firstWorksheet.Cells[14, 1].Value = "Total working day";
+                firstWorksheet.Cells[14, 2].Value = "0";
+                firstWorksheet.Cells[15, 1].Value = "Relax day";
+                firstWorksheet.Cells[15, 2].Value = "0";
+                firstWorksheet.Cells[16, 1].Value = "Perfect point";
+                firstWorksheet.Cells[16, 2].Value = "0";
+                firstWorksheet.Cells[17, 1].Value = "Challenge";
+                firstWorksheet.Cells[17, 2].Value = "0";
+                firstWorksheet.Cells[18, 1].Value = "Total lucky";
+                firstWorksheet.Cells[18, 2].Value = "0";
+                firstWorksheet.Cells[19, 1].Value = "Total incomplete targets";
+                firstWorksheet.Cells[19, 2].Value = "0";
+                pkgDetails.Save();
+                Thread.Sleep(2000);
+                MessageBox.Show("Vui lòng mở lại chương trình");
+                Environment.Exit(0);
+            }
+            else
+            {
+                timer1.Enabled = true;
+                timer2.Enabled = true;
+                this.CenterToScreen();
+            }
+            
         }
         // Xử lí khi nhấn button thêm
         private void Button1_Click(object sender, EventArgs e)

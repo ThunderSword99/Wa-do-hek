@@ -27,7 +27,6 @@ C:\Users\ADMIN\Desktop\Wa-do-hek\WhatchaDoin\WhatchaDoin\bin\Debug\EPPlus.dll
 C:\Users\ADMIN\Desktop\Wa-do-hek\WhatchaDoin\WhatchaDoin\bin\Debug\WinFormAnimation.dll
 C:\Users\ADMIN\Desktop\Wa-do-hek\WhatchaDoin\WhatchaDoin\bin\Debug\DevComponents.DotNetBar2.xml
 C:\Users\ADMIN\Desktop\Wa-do-hek\WhatchaDoin\WhatchaDoin\bin\Debug\EPPlus.xml
-C:\Users\ADMIN\Desktop\Wa-do-hek\WhatchaDoin\WhatchaDoin\obj\Debug\WhatchaDoin.csprojAssemblyReference.cache
 C:\Users\ADMIN\Desktop\Wa-do-hek\WhatchaDoin\WhatchaDoin\obj\Debug\WhatchaDoin.csproj.ResolveComReference.cache
 C:\Users\ADMIN\Desktop\Wa-do-hek\WhatchaDoin\WhatchaDoin\obj\Debug\WhatchaDoin.frmDetails.resources
 C:\Users\ADMIN\Desktop\Wa-do-hek\WhatchaDoin\WhatchaDoin\obj\Debug\WhatchaDoin.Properties.Resources.resources

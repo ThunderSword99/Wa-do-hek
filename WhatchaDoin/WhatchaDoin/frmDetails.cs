@@ -83,8 +83,8 @@ namespace WhatchaDoin
 
         public void SetDecorationToChart()
         {
-            chartMain.BackImage = @"..\..\Resources\Flare.jpg";
-            radarChart.BackImage = @"..\..\Resources\Azur Lane.jpg";
+            chartMain.BackImage = @"Resources\Flare.jpg";
+            radarChart.BackImage = @"Resources\Azur Lane.jpg";
         }
 
         public frmDetails()

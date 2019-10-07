@@ -10,7 +10,7 @@
 			Wa-du-hek is a todolist that you absolutely need to make your dream.
 			<br>
 		</a>
-		<sub><i>Clicking this helps fund the Awesome project</i></sub>
+		<sub><i>Clicking this to download Wa-Du-Hek</i></sub>
 	</p>
 	<br>
 	<br>

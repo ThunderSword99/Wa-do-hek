@@ -1,2 +1,2 @@
-# Wa-do-hek
-This application helps you to make your plans
+<div align="center">
+	<img src="Media/Logo.png" alt="Wa du hek">

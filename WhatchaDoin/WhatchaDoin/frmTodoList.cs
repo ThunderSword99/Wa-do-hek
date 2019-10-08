@@ -182,33 +182,33 @@ namespace WhatchaDoin
         // Load các target lên checkListBox
         private void LoadingTodayTargets()
         {
-            if (!IfTodayIsToday())
+            string[] lines = File.ReadAllLines("TodayTargets.txt");
+            foreach (string s in lines)
             {
-                SaveData();
-                ClearTodayTargets();
-                ResetLuckyStatus();
-            }
-            else
-            {
-                string[] lines = File.ReadAllLines("TodayTargets.txt");
-                foreach (string s in lines)
+                try
                 {
-                    try
+                    if (s[s.Length - 1] == '1')
                     {
-                        if (s[s.Length - 1] == '1')
-                        {
-                            checkedListBox1.Items.Add(s.Substring(0, s.Length - 1), true);
-                        }
-                        else
-                        {
-                            checkedListBox1.Items.Add(s.Substring(0, s.Length - 1), false);
-                        }
+                        checkedListBox1.Items.Add(s.Substring(0, s.Length - 1), true);
                     }
-                    catch
+                    else
                     {
-
+                        checkedListBox1.Items.Add(s.Substring(0, s.Length - 1), false);
                     }
                 }
+                catch (Exception ex)
+                {
+                    
+                }
+            }
+            if (!IfTodayIsToday())
+            {
+                targets = checkedListBox1.Items.Count;
+                completeTargets = checkedListBox1.CheckedItems.Count;
+                incompleteTargets = checkedListBox1.Items.Count - checkedListBox1.CheckedItems.Count;
+                SaveData();
+                checkedListBox1.Items.Clear();
+                ResetLuckyStatus();
             }
             
         }
@@ -457,7 +457,7 @@ namespace WhatchaDoin
         // Xóa các mục tiêu khi chuyển ngày
         private void ClearTodayTargets()
         {
-            string path = "TodayTargets.txt";
+            string path = @"TodayTargets.txt";
             File.WriteAllText(path, String.Empty);
         }
         // Lưu lịch sử
@@ -483,40 +483,33 @@ namespace WhatchaDoin
         // Lưu và update các thành tựu
         private void SaveData()
         {
-            if (IfTodayIsToday())
-            {
-                firstWorksheet.Cells[3, 2].Value = targets;
-                firstWorksheet.Cells[4, 2].Value = completeTargets;
-                firstWorksheet.Cells[5, 2].Value = incompleteTargets;
-                pkgDetails.Save();
+            // Lưu targets vào hitory
+            SaveHistory();
+            // Cập nhật mới các thành tựu
+            UpdateAchievement();
+            // Lưu giữ liệu ngày hôm qua
+            int nextColumn = NullColumn(8);
+            for (int i = 3; i <= 6; i++)
+            {    
+                firstWorksheet.Cells[i, 2].Copy(firstWorksheet.Cells[i+5, nextColumn]);
             }
-            else if (firstWorksheet.Cells[6, 2].Value != null)
-            {
-                // Lưu targets vào hitory
-                SaveHistory();
-                // Cập nhật mới các thành tựu
-                UpdateAchievement();
-                // Lưu giữ liệu ngày hôm qua
-                int nextColumn = NullColumn(8);
-                for (int i = 3; i <= 6; i++)
-                {    
-                    firstWorksheet.Cells[i, 2].Copy(firstWorksheet.Cells[i+5, nextColumn]);
-                }
-                string date = DateTime.Now.ToString("MM/dd/yyyy");
-                string time = DateTime.Now.ToString("h:mm tt");
-                firstWorksheet.Cells[1, 2].Value = time;
-                firstWorksheet.Cells[3, 2].Value = targets;
-                firstWorksheet.Cells[4, 2].Value = completeTargets;
-                firstWorksheet.Cells[5, 2].Value = incompleteTargets;
-                firstWorksheet.Cells[6, 2].Value = date;
-                pkgDetails.Save();
-            }
+            string date = DateTime.Now.ToString("MM/dd/yyyy");
+            string time = DateTime.Now.ToString("h:mm tt");
+            firstWorksheet.Cells[1, 2].Value = time;
+            firstWorksheet.Cells[3, 2].Value = targets;
+            firstWorksheet.Cells[4, 2].Value = completeTargets;
+            firstWorksheet.Cells[5, 2].Value = incompleteTargets;
+            firstWorksheet.Cells[6, 2].Value = date;
+            pkgDetails.Save();   
         }
         // Sự kiện đóng form
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             SaveTodayTargets();
-            SaveData();
+            firstWorksheet.Cells[3, 2].Value = targets;
+            firstWorksheet.Cells[4, 2].Value = completeTargets;
+            firstWorksheet.Cells[5, 2].Value = incompleteTargets;
+            pkgDetails.Save();
         }
         // Nhấn Enter trong textbox1 sẽ gửi lên checklistbox
         private void TextBox1_KeyDown(object sender, KeyEventArgs e)

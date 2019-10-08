@@ -184,6 +184,7 @@ namespace WhatchaDoin
         {
             if (!IfTodayIsToday())
             {
+                SaveData();
                 ClearTodayTargets();
                 ResetLuckyStatus();
             }
@@ -489,7 +490,7 @@ namespace WhatchaDoin
                 firstWorksheet.Cells[5, 2].Value = incompleteTargets;
                 pkgDetails.Save();
             }
-            else
+            else if (firstWorksheet.Cells[6, 2].Value != null)
             {
                 // Lưu targets vào hitory
                 SaveHistory();

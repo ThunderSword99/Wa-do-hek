@@ -669,7 +669,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:TodoList"
         "ProductCode" = "8:{DA0A3751-7590-4B1E-BCBA-FA6370100E93}"
-        "PackageCode" = "8:{038AC19E-95D2-4F1C-809A-17B26EAF1B8B}"
+        "PackageCode" = "8:{50837E62-7415-4411-B07B-4997124576E6}"
         "UpgradeCode" = "8:{9EF7C919-D3FE-49CD-8597-15E0064F994C}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -791,7 +791,7 @@
         {
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_78CE8258E13941F0963FA872A0E899F7"
             {
-            "Name" = "8:Wa Do Hek"
+            "Name" = "8:Wa Du Hek"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
@@ -805,7 +805,7 @@
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_D61168B0E8584CFFACD383DD4B5C750D"
             {
-            "Name" = "8:Wa Do Hek"
+            "Name" = "8:Wa Du Hek"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"

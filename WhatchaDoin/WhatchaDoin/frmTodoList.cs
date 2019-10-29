@@ -4,6 +4,9 @@ using System.Windows.Forms;
 using System.IO;
 using OfficeOpenXml;
 using System.Threading;
+using System.Linq;
+using Microsoft.VisualBasic.ApplicationServices;
+using System.Diagnostics;
 
 namespace WhatchaDoin
 {
@@ -173,6 +176,7 @@ namespace WhatchaDoin
         {
             SetParameter();
             SetTextToLabel();
+            notifyIcon1.Visible = false;
         }
         // Chỉnh lại lucky point = false
         private void ResetLuckyStatus()
@@ -226,7 +230,7 @@ namespace WhatchaDoin
         public frmTodoList()
         {
             InitializeComponent();
-            if(CheckIfTheFirstRun())
+            if (CheckIfTheFirstRun())
             {
                 CreateFiles();
                 Thread.Sleep(2000);
@@ -277,8 +281,7 @@ namespace WhatchaDoin
                 timer1.Enabled = true;
                 timer2.Enabled = true;
                 this.CenterToScreen();
-            }
-            
+            }   
         }
         // Xử lí khi nhấn button thêm
         private void Button1_Click(object sender, EventArgs e)

@@ -6,7 +6,7 @@
 <div align="center">
 	<br>
 	<p>
-		<a href="https://drive.google.com/file/d/1rEJ8W8VbHTeD0YFCUa5E60ky49gCSR_7/view?usp=sharing">
+		<a href="https://drive.google.com/file/d/1i_gNzYvmlcnR9O-Ja1xd-M4_4yBseNPF/view?usp=sharing">
 			<br>
 			<b>You don't know what you gonna do today?</b>
 			<br>

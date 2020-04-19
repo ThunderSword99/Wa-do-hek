@@ -159,6 +159,7 @@ namespace WhatchaDoin
         // Đặt text cho Label trong frmTodoList
         private void SetTextToLabel()
         {
+            
             label3.Text = text3 + targets.ToString();
             label4.Text = text4 + completeTargets.ToString();
             label5.Text = text5 + incompleteTargets.ToString();
@@ -213,6 +214,7 @@ namespace WhatchaDoin
                 SaveData();
                 checkedListBox1.Items.Clear();
                 ResetLuckyStatus();
+                startTimeline = (DateTime.Parse(firstWorksheet.Cells[1, 2].Value.ToString())).ToString("h:mm tt");
             }
             
         }

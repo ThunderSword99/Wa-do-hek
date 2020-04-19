@@ -73,6 +73,26 @@ namespace WhatchaDoin.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Azur_Lane {
+            get {
+                object obj = ResourceManager.GetObject("Azur_Lane", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Flare {
+            get {
+                object obj = ResourceManager.GetObject("Flare", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Mango {
             get {
                 object obj = ResourceManager.GetObject("Mango", resourceCulture);

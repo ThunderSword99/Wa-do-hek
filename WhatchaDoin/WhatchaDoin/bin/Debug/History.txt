@@ -1,4 +1,669 @@
-==========10/07/2019==========
+==========10/08/2019==========
+*Adding 4 target(s): 
+Commit github at least 5 times (✓)
+Learn react native (✓)
+Coding wa-du-hek (✓)
+Write readme for wa-du-hek (✓)
+==========10/09/2019==========
+*Adding 4 target(s): 
+Coding Wa du hek (✓)
+Commit github 7 times (✓)
+Making mobile components on figma (✗)
+Write readme (✗)
+==========10/10/2019==========
+*Adding 3 target(s): 
+Coding AI_tank (✓)
+Contribute github 10 times (✗)
+Learn react native (✗)
+==========10/11/2019==========
+*Adding 4 target(s): 
+Contribute github 10 times (✗)
+Code ai_tank (✓)
+Read an english essay in bbc (✓)
+Learn and write readme (✓)
+==========10/12/2019==========
+*Adding 5 target(s): 
+Code ai_tank (✓)
+Support java class (✓)
+Commit github 10 times (✓)
+Read an english wikipedia (✓)
+Write readme for ai_tank (✓)
+==========10/13/2019==========
 *Adding 0 target(s): 
+==========10/14/2019==========
+*Adding 3 target(s): 
+Play at least 2 lol games (✓)
+Making homework for java class (✓)
+Commit github 5 times (✓)
+==========10/15/2019==========
+*Adding 3 target(s): 
+Code AI_Tank (✓)
+Commit github 5 times (✗)
+Read an english essay (✗)
+==========10/16/2019==========
+*Adding 4 target(s): 
+Doing big-homework window programing (✓)
+Commit 5 times github (✗)
+Wash balo (✗)
+Code ai tank (✗)
+==========10/17/2019==========
+*Adding 4 target(s): 
+Doing C# big-homework (✓)
+Write readme (✗)
+Commit at least 7 times (✓)
+Code ai tank (✓)
+==========10/18/2019==========
+*Adding 5 target(s): 
+Teach ai tank (✓)
+Coding ai tank (✓)
+Commit git at least 6 times (✓)
+Wash balo (✗)
+Do big-homework C# (✓)
+==========10/19/2019==========
+*Adding 3 target(s): 
+Coding ai tank (✓)
+Commit githun 5 times (✓)
+Write 8 english topic (✓)
+==========10/20/2019==========
+*Adding 4 target(s): 
+Wash clothes (✓)
+Code ai tank (✗)
+Write homework week 4 java_hit_2019 (✓)
+Do eop unit test (✓)
+==========10/21/2019==========
+*Adding 3 target(s): 
+Coding ai tank (✓)
+Clothesline (✗)
+Commit github 5 times (✗)
+==========10/22/2019==========
+*Adding 4 target(s): 
+Pass the AI_Tank contest  (✓)
+Use git commit at least 5 times (✓)
+Code AI-Tank (✓)
+Take clothesline (✓)
+==========10/23/2019==========
+*Adding 1 target(s): 
+Code ai_tank (✓)
+==========10/24/2019==========
+*Adding 3 target(s): 
+Code ai tank (✗)
+Code bimedtech C# (✗)
+Commit 3 times at least (✗)
+==========10/25/2019==========
+*Adding 4 target(s): 
+Code Ai_tank (✓)
+Code c# (✓)
+Learn Unity 2D (✓)
+Take ai tank photo (✓)
+==========10/26/2019==========
+*Adding 0 target(s):
+==========10/27/2019==========
+*Adding 3 target(s): 
+Commit github at least 5 times (✓)
+Learn unity 2D (✓)
+Find some Game Contest (✓)
+==========10/28/2019==========
+*Adding 3 target(s): 
+Code unity game (✓)
+Learn node js (✗)
+Play game (✓)
 ==========10/29/2019==========
+*Adding 4 target(s): 
+Learn NodeJS (✓)
+Write down unity infomation (✗)
+Code react native (✓)
+Commit 3 times (✓)
+==========10/30/2019==========
+*Adding 5 target(s): 
+Learn nodejs (✗)
+Code unity (✗)
+Play game (✗)
+Code wa-du-hek (✓)
+Write readme (✗)
+==========11/01/2019==========
+*Adding 5 target(s): 
+Code notejs (✓)
+Write readme (✗)
+Play game (✓)
+Commit github at least 5 times (✗)
+Take shower (✗)
+==========11/02/2019==========
+*Adding 2 target(s): 
+Code react native (✓)
+Commit github 5 times (✗)
+==========11/03/2019==========
+*Adding 6 target(s): 
+Code react native (✓)
+Learn dart language (✗)
+Commit github 5 times (✗)
+Take shower  (✓)
+Play game (✓)
+Wash clothes (✓)
+==========11/04/2019==========
+*Adding 7 target(s): 
+Commit github 5 times (✗)
+Code login screen react native (✓)
+Learn flutter (✗)
+Take clothes (✗)
+Take a shower (✓)
+Play game (✓)
+Make video for java class (✗)
+==========11/05/2019==========
+*Adding 4 target(s): 
+Code notejs (✓)
+Code c# (✓)
+Commit code 5 times (✓)
+Make homework for java class (✓)
+==========11/10/2019==========
+*Adding 1 target(s): 
+Learn and code nodejs (✓)
+==========11/12/2019==========
+*Adding 1 target(s): 
+Code nodeJS (✓)
+==========11/13/2019==========
+*Adding 1 target(s): 
+Code notejs (✓)
+==========11/14/2019==========
+*Adding 3 target(s): 
+Code nodeJS complete at least 5 videos (✓)
+Practice typing (✓)
+Use github 7 times (✓)
+==========11/15/2019==========
+*Adding 6 target(s): 
+Code NodeJs (✓)
+Commit github 10 times (✓)
+Wash clothes (✓)
+Play game (✓)
+Pratice typing (✓)
+Code c# (✓)
+==========11/16/2019==========
+*Adding 2 target(s): 
+Relax (✓)
+Code java (✓)
+==========11/17/2019==========
+*Adding 3 target(s): 
+Code nodeJS (✓)
+Train typing (✓)
+Play game (✓)
+==========11/18/2019==========
+*Adding 2 target(s): 
+Traning typing (✓)
+Play game (✓)
+==========11/19/2019==========
+*Adding 3 target(s): 
+Train typing (✗)
+Code c# big-homework (✗)
+Code NodeJS (✗)
+==========11/21/2019==========
+*Adding 1 target(s): 
+Code Miner gold c++ (✓)
+==========11/22/2019==========
+*Adding 1 target(s): 
+Join in FPT festival (✓)
+==========11/25/2019==========
+*Adding 6 target(s): 
+Code c# big-homework (✓)
+Commit 7 times (✗)
+Train typing (✗)
+Play game (✓)
+Learn NodeJS (✗)
+Write readme (✗)
+==========11/26/2019==========
+*Adding 3 target(s): 
+Train typing (✓)
+Regist study schedule (✓)
+Do c# big-homework (✓)
+==========11/27/2019==========
+*Adding 4 target(s): 
+Do C# big-homework (✓)
+Train typing (✓)
+Commit github 7 times (✗)
+Clean bag (✗)
+==========11/28/2019==========
+*Adding 4 target(s): 
+Do c# soft product big-homework (✓)
+Play game (✓)
+Clean bag (✗)
+Train typing (✓)
+==========11/29/2019==========
+*Adding 5 target(s): 
+Complete all function in form Selling c# (✓)
+Train typing (✓)
+Use github 5 times (✗)
+Clean bag (✗)
+Write github guild for java class (✗)
+==========12/01/2019==========
+*Adding 5 target(s): 
+Code c# big-homework (✓)
+Train typing (✓)
+Write github for java class (✓)
+Give back cook spot (✗)
+Clean house (✓)
+==========12/02/2019==========
+*Adding 3 target(s): 
+Train pying (✓)
+Write homework for python and java class (✓)
+Code c# big-homework (✗)
+==========12/03/2019==========
+*Adding 4 target(s): 
+Train typing (✓)
+Code c# (✓)
+Take bike (✓)
+Regist "Tam tru tam vang" (✗)
+==========12/04/2019==========
+*Adding 4 target(s): 
+Train typing (✓)
+Get "Tam tru tam vang" (✗)
+Take back key (✗)
+Code c# (✓)
+==========12/05/2019==========
+*Adding 5 target(s): 
+Learn and code NodeJS with mongo (✗)
+Train typing (✓)
+Play game (✓)
+Take back key at 4p.m (✗)
+Commit github (✗)
+==========12/06/2019==========
+*Adding 9 target(s): 
+Write down all idea to notebook (✗)
+Train typing (✓)
+Fix phone (✓)
+Clean house (✓)
+Make java contest (✓)
+Take back key (✗)
+Code (✓)
+Take clothes to wash (✓)
+Regist "Tạm trú tạm vắng" (✓)
+==========12/08/2019==========
+*Adding 6 target(s): 
+Make java contest solution (✓)
+Take back key (✗)
+Regist transport parking (✗)
+Train typing (✗)
+Do exercise (✓)
+Clean bag (✗)
+==========12/09/2019==========
+*Adding 4 target(s): 
+Code c# (✓)
+Train typing (✓)
+Play game (✓)
+Wash chair (✓)
+==========12/10/2019==========
+*Adding 1 target(s): 
+Code c# (✓)
+==========12/11/2019==========
+*Adding 3 target(s): 
+Regist parking transport (✗)
+Code unity (✗)
+Train typing (✗)
+==========12/12/2019==========
+*Adding 4 target(s): 
+Do PTTKHT Big-homework  (✓)
+Play game (✓)
+Code unity (✓)
+Train typing (✓)
+==========12/13/2019==========
+*Adding 6 target(s): 
+Code unity (✓)
+Go to work (✓)
+Use github 5 times (✗)
+Take a shower (✓)
+Train typing (✓)
+Mark java contest (✗)
+==========12/14/2019==========
 *Adding 0 target(s): 
+==========12/18/2019==========
+*Adding 2 target(s): 
+Code unity (✓)
+Marketing Thit Bo Kho (✓)
+==========12/19/2019==========
+*Adding 8 target(s): 
+Commit github 5 times (✓)
+Code unity (✓)
+Learn english (✗)
+Relaxing (✗)
+Code react native (✓)
+Train typing (✓)
+Preparation exercises (✓)
+Make c++ homework for bro DUy (✓)
+==========12/20/2019==========
+*Adding 4 target(s): 
+Code AI Tank (✓)
+Commit github 5 times (✗)
+Learn english (✓)
+Code unity (✓)
+==========12/22/2019==========
+*Adding 5 target(s): 
+Code ai tank (✓)
+Code unity (✓)
+Learn english (✗)
+Train typing (✓)
+Commit code 5 times (✓)
+==========12/23/2019==========
+*Adding 0 target(s): 
+==========12/24/2019==========
+*Adding 5 target(s): 
+Code unity (✓)
+Make homework for bro Duy (✓)
+Commit github 5 times (✗)
+Train typing (✓)
+Learn english (✗)
+==========12/25/2019==========
+*Adding 7 target(s): 
+Code unity (✗)
+Learn english (✗)
+Translate topic (✓)
+Learn how to sleep, restart, shutdown using cmd (✓)
+Training typing (✓)
+Use github 5 times (✗)
+Clean computer (✓)
+==========12/26/2019==========
+*Adding 9 target(s): 
+Code unity (✗)
+Code batch file (✓)
+Learn english (✓)
+Train typing (✓)
+Learn + code react native (✗)
+Commit github 5 times (✓)
+Make some question for bro Duy (✓)
+Translate a topic english (✓)
+Write readme  (✓)
+==========12/27/2019==========
+*Adding 7 target(s): 
+Code batch (✓)
+Train typing (✓)
+Translate a english topic (✗)
+Commit github 7 times (✗)
+Check java big-homework (✗)
+Copy home key (✓)
+Code unity (✓)
+==========12/28/2019==========
+*Adding 6 target(s): 
+Code unity (✗)
+Translate english (✓)
+Train typing (✓)
+Code nodejs (✗)
+Commit github 5 times (✗)
+Help bro Đen (✓)
+==========12/29/2019==========
+*Adding 5 target(s): 
+Play the last garena game (✓)
+Code unity (✓)
+Commit github 5 times (✗)
+Train typing (✓)
+Translate topic (✗)
+==========12/30/2019==========
+*Adding 3 target(s): 
+Relax (✗)
+Wash motobike (✗)
+Take clothes line (✗)
+==========12/31/2019==========
+*Adding 5 target(s): 
+Code unity (✓)
+Commit github 5 times (✓)
+Learn nodeJS (✗)
+Translate topic (✓)
+Make homework for bro Duy (✓)
+==========01/01/2020==========
+*Adding 5 target(s): 
+Code unity (✓)
+Commit github 7 times (✗)
+Ask for practicing (✗)
+Translate topic english (✗)
+Play games (✓)
+==========01/02/2020==========
+*Adding 0 target(s): 
+==========01/03/2020==========
+*Adding 1 target(s): 
+Relax (✓)
+==========01/04/2020==========
+*Adding 4 target(s): 
+Code unity (✗)
+Commit github 5 times (✗)
+Translate topic english (✗)
+Train typing (✗)
+==========01/05/2020==========
+*Adding 4 target(s): 
+Code unity (✓)
+Commit github 7 times (✗)
+Translate english topic (✗)
+Play game (✓)
+==========01/06/2020==========
+*Adding 3 target(s): 
+Code unity (✗)
+Make idea for game (✗)
+Commit github 20 times (✗)
+==========01/07/2020==========
+*Adding 3 target(s): 
+Code unity (✓)
+Commit github 5 times (✓)
+Translate english topic (✗)
+==========01/09/2020==========
+*Adding 2 target(s): 
+Make homework for bro Duy (✓)
+Take "Thit bo kho" (✓)
+==========01/10/2020==========
+*Adding 3 target(s): 
+Code untiy (✗)
+Commit github 5 times (✗)
+Make game for teaching (✗)
+==========01/11/2020==========
+*Adding 1 target(s): 
+Relax (✓)
+==========01/12/2020==========
+*Adding 3 target(s): 
+Code unity (✓)
+Make homework for teaching (✓)
+Commit github 5 times (✓)
+==========01/13/2020==========
+*Adding 3 target(s): 
+Code unity (✓)
+Commit github 7 times (✓)
+Make homework for Bi (✗)
+==========01/15/2020==========
+*Adding 3 target(s): 
+Code unity (✗)
+Commit github 5 times (✗)
+Make homework for Bi (✗)
+==========01/17/2020==========
+*Adding 6 target(s): 
+Make homework for Bi (✓)
+Photo homework (✓)
+Code unity (✓)
+Commit github 5 times (✓)
+Make homework for bro Duy (✗)
+Take blanket to laundry shop (✓)
+==========01/18/2020==========
+*Adding 5 target(s): 
+Make homework for bro Duy (✓)
+Pay tuition (✓)
+Code unity (✓)
+Commit github 5 times (✓)
+Schedule teaching times (✓)
+==========01/20/2020==========
+*Adding 2 target(s): 
+Make homework for bro Duy (✗)
+Shiping Thit bo kho (✗)
+==========01/21/2020==========
+*Adding 3 target(s): 
+Make #problem E (✗)
+Code unity (✓)
+Commit github 5 times (✗)
+==========01/25/2020==========
+*Adding 3 target(s): 
+Make #problem E (✗)
+Code unity (✓)
+Commit github 5 times (✗)
+==========02/03/2020==========
+*Adding 1 target(s): 
+HAPPY NEW YEAR (✓)
+==========02/04/2020==========
+*Adding 7 target(s): 
+Buy ipad cover (✓)
+Take blanket (✓)
+Make teaching lesson (✓)
+Learn flutter (✗)
+Commit github 5 times (✓)
+Code unity (✗)
+Create solution for Bro Duy (✓)
+==========02/05/2020==========
+*Adding 2 target(s): 
+Code unity (✓)
+Make 2 dimensional array homework for Bro Duy (✓)
+==========02/06/2020==========
+*Adding 2 target(s): 
+Play game (✓)
+Relax (✓)
+==========02/08/2020==========
+*Adding 5 target(s): 
+Ask Bro.Duy for problems (✓)
+Wash shoes (✗)
+Learn and code flutter (✓)
+Make teaching topic (✗)
+Commit github 5 times (✗)
+==========02/11/2020==========
+*Adding 3 target(s): 
+Code flutter (✓)
+Commit github 5 times (✓)
+Urge bro Duy to do homework (✓)
+==========02/12/2020==========
+*Adding 5 target(s): 
+Code flutter (✗)
+Take back chothes to Mr.Cau (✓)
+Make homework for Bi (✗)
+Make ex for Bro.Duy (✓)
+Fill gas (✓)
+==========02/13/2020==========
+*Adding 6 target(s): 
+Wash shoes (✗)
+Wash clothes (✓)
+Code flutter (✓)
+Make homework for Bro.Duy (✓)
+Make homework for Bi (✓)
+Commit github 10 times (✓)
+==========02/15/2020==========
+*Adding 4 target(s): 
+Code flutter (✓)
+Make problems for bro.Duy (✗)
+Commit github 10 times (✓)
+Make lesson for teaching (✓)
+==========02/16/2020==========
+*Adding 5 target(s): 
+Code flutter (✗)
+Make homework for Bro.Duy (✗)
+Make english homework (✗)
+Commit github 5 times (✗)
+Read IELS lesson (✗)
+==========02/17/2020==========
+*Adding 5 target(s): 
+Code flutter (✗)
+Make homework for Bro.Duy (✗)
+Make english homework (✗)
+Commit github 5 times (✗)
+Read IELS lesson (✗)
+==========02/18/2020==========
+*Adding 4 target(s): 
+Code flutter (✓)
+Make Bi homework (✗)
+Make 2d array homework (✗)
+Commit github 10 times (✓)
+==========02/21/2020==========
+*Adding 4 target(s): 
+Code flutter (✗)
+Make homework for Bro.Duy (✓)
+Make teaching lesson  (✗)
+Commit github 10 times (✓)
+==========02/23/2020==========
+*Adding 3 target(s): 
+Code flutter (✗)
+Do sql exam (✗)
+Make BLX (✗)
+==========02/24/2020==========
+*Adding 1 target(s): 
+Relax (✓)
+==========02/26/2020==========
+*Adding 3 target(s): 
+Code flutter (✗)
+Learn A1-Drive (✗)
+Do 100 pushups (✗)
+==========02/27/2020==========
+*Adding 4 target(s): 
+Code flutter (✗)
+Pushups 100 times (✗)
+Go to barbershop (✗)
+Buy toothbrush (✗)
+==========02/28/2020==========
+*Adding 3 target(s): 
+Code flutter (✓)
+Learn A1-drive (✓)
+Pushups 100 times (✓)
+==========02/29/2020==========
+*Adding 2 target(s): 
+Code unity (✓)
+Pushups 100 times (✓)
+==========03/04/2020==========
+*Adding 2 target(s): 
+Train game (✗)
+Code unity (✗)
+==========03/05/2020==========
+*Adding 3 target(s): 
+Code unity (✓)
+Pushups 100 times (✓)
+Learn A1 (✗)
+==========03/06/2020==========
+*Adding 3 target(s): 
+Take clothes to laundry shop (✓)
+Code unity (✓)
+Learn a1 driver (✓)
+==========03/07/2020==========
+*Adding 4 target(s): 
+Code unity (✗)
+Learn a1 (✗)
+Pushups 100 times (✗)
+Take clothes (✗)
+==========03/08/2020==========
+*Adding 2 target(s): 
+Pushups 100 times (✓)
+Throw out trash (✓)
+==========03/09/2020==========
+*Adding 4 target(s): 
+Wash shoes (✗)
+Pushups 100 times (✗)
+Make Bi homework (✗)
+Regist works schedule (✗)
+==========03/10/2020==========
+*Adding 4 target(s): 
+Pushups 100 times (✗)
+Code unity (✗)
+Learn A1-drive (✗)
+Wash shoes (✓)
+==========03/21/2020==========
+*Adding 3 target(s): 
+Code unity (✗)
+Learn a1-drive (✗)
+Pushups 100 times (✗)
+==========03/23/2020==========
+*Adding 3 target(s): 
+Make resume (✓)
+Wash clothes (✓)
+Check Bro.Duy homework (✗)
+==========04/01/2020==========
+*Adding 0 target(s): 
+==========04/02/2020==========
+*Adding 0 target(s): 
+==========04/13/2020==========
+*Adding 2 target(s): 
+Stayhome (✓)
+Make limited transform of preview items (unity) (✓)
+==========04/14/2020==========
+*Adding 3 target(s): 
+Code unity (✓)
+Solving some problems (✓)
+Watching movie (✓)
+==========04/15/2020==========
+*Adding 2 target(s): 
+Make quest for Bro.Duy (✓)
+Play rok on pc (✓)
+==========04/19/2020==========
+*Adding 1 target(s): 
+Checking Bro.Duy's project (✓)

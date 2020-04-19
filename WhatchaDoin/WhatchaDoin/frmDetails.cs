@@ -83,8 +83,7 @@ namespace WhatchaDoin
 
         public void SetDecorationToChart()
         {
-            chartMain.BackImage = @"Resources\Flare.jpg";
-            radarChart.BackImage = @"Resources\Azur Lane.jpg";
+            
         }
 
         public frmDetails()
@@ -97,7 +96,6 @@ namespace WhatchaDoin
             LoadDataFromExcelToChart();
             AddValueToLineChart();
             AddValueToCircleChart();
-            SetDecorationToChart();
         }
 
         public void SetText()
@@ -112,6 +110,7 @@ namespace WhatchaDoin
             CreateDetailFiles();
             SetText();
             dateTimePicker1.Select();
+            
         }
 
         private void VScrollBar1_Scroll(object sender, ScrollEventArgs e)

@@ -35,4 +35,3 @@ C:\Users\ADMIN\Desktop\Wa-do-hek\WhatchaDoin\WhatchaDoin\obj\Debug\WhatchaDoin.c
 C:\Users\ADMIN\Desktop\Wa-do-hek\WhatchaDoin\WhatchaDoin\obj\Debug\WhatchaDoin.exe
 C:\Users\ADMIN\Desktop\Wa-do-hek\WhatchaDoin\WhatchaDoin\obj\Debug\WhatchaDoin.pdb
 C:\Users\ADMIN\Desktop\Wa-do-hek\WhatchaDoin\WhatchaDoin\obj\Debug\WhatchaDoin.frmTodoList.resources
-C:\Users\ADMIN\Desktop\Wa-do-hek\WhatchaDoin\WhatchaDoin\obj\Debug\WhatchaDoin.csprojAssemblyReference.cache
